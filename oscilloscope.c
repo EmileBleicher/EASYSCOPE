@@ -172,4 +172,12 @@ void external_interupt(int k){
     }
     RBIF=0;
 }
+void print_Trigger(float value,int k){
+    int V;
+    V=(value/5.0)*255;
+    V=50-(V/k);
+    glcd_arrow(memo_trigger,124,0,0); 
+    memo_trigger=V;
+    glcd_arrow(V,124,0,1); 
+}
 }
