@@ -20,23 +20,24 @@ void __interrupt() ISR() {
     if (PIR1bits.ADIF && CHS0==1) {
         Frequence_Echantillonage(&val);}
     if (PIR1bits.ADIF && CHS1==1){
-       Amp=Amplitude_Echantillonage();}
+       Amp=Amplitude_Echantillonage();}//A revoir notament en modiffiant l'équation
     if(INTCONbits.TMR0IF ){			//Est-ce que Timer0 a causé l'interruption?
 		T0_Interupt(val);  }      	//Si oui, exécuter T0 ISR (interrupt service routine)
     if(RBIF==1){
-        glcd_text_write("Interupt", 20, 1, 1);
-        RBIF=0;
-    }
-    
-    
+        external_interupt(Amp);}   
 }
 
-void main(void) {
+void main(void)
+{
     glcd_Init(GLCD_ON);
+    glcd_Image();
+    __delay_ms(1000);
+    glcd_FillScreen(0);
+    print_oscylocope();
     init_ADC();
     InitTimer0(0x03, 0xE8);
     init_external_interupt();
-    while(1){}
-    
+    while(1){
+    }
     return;
 }
