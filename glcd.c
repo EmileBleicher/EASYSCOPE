@@ -812,4 +812,23 @@ void glcd_Image()
      GLCD_CS1=0;   
      GLCD_CS2=0;
 }
+void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned char end,unsigned char color)
+{	
+    if(xory){
+    for (int i=start;i<end;i++){
+        glcd_PlotPixel(i,pos,color);
+    }}
+    else
+    {
+        for(int y=start;y<end;y++){
+            glcd_PlotPixel(pos,y,color);
+        }
+    }
+}
+void caddrillage(){
+     glcd_line(30,0,0,51,1);
+     glcd_line(60,0,0,51,1);
+     glcd_line(90,0,0,51,1);
+     glcd_line(25,1,0,120,1);  
+}
 }
