@@ -55,7 +55,21 @@ void T0_Interupt( int val){
 	TMR0IF = 0;  //Clear flag du timer0
 }
 void ADC_Interupt(int k){
-    if(i>128){
+    int ADC_Value=ADRESH;
+    int print_ADC=50-(ADC_Value/k);
+    if (Oscilo_Mode){
+        if(Start_Single){
+               ADC_Recording(print_ADC);
+        }else{
+            i=0;
+            Stay_Value(ADC_Value,Trigger,print_ADC);
+        }
+    }else{
+        ADC_Recording(print_ADC);
+    }
+    ADIF = 0;
+}
+
         i=0;
         enable=1;
         CHS0=1;
