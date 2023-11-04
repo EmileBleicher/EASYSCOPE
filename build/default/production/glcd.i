@@ -445,7 +445,12 @@ void glcd_WriteChar3x6(unsigned char ch, glcd_color_t color);
 # 162 "./glcd.h"
 void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_color_t color);
 # 172 "./glcd.h"
-void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y);
+void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font);
+void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned char end,unsigned char color);
+void glcd_Image();
+void caddrillage();
+void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color);
+void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color);
 # 14 "glcd.c" 2
 
 # 1 "D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
@@ -5981,19 +5986,101 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./main.h" 1
 # 15 "./main.h"
 # 1 "./oscilloscope.h" 1
-# 10 "./oscilloscope.h"
+# 11 "./oscilloscope.h"
     void init_ADC();
     void InitTimer0(unsigned char Hb, unsigned char Lb);
+    void init_external_interupt();
+    void print_oscylocope();
     void T0_Interupt( int val);
     void ADC_Interupt(int k);
+    void external_interupt(int k);
     void Frequence_Echantillonage(int *valeur);
+    int Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
-    int Amplitude_Echantillonage();
-    void init_external_interupt();
+    void ADC_Recording(int print_point);
+    void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
+    void print_Trigger(float value,int k);
 # 15 "./main.h" 2
 # 16 "glcd.c" 2
-# 27 "glcd.c"
+
+
+
+
+
+
+
+
+const unsigned char acceuil[1024]={
+   0, 0, 0, 0, 0, 0, 0, 0,128,128,128,128, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,128, 0, 0,128,
+   0, 0,128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 62, 65,128,128,128,128, 65, 62, 0, 0,
+ 216,148,164,108, 0, 0,120,132,132, 76, 0,136,252,128,129,255,
+ 128,129,255,128, 0,120,132,132,132,120, 0, 0,216,148,164,108,
+   0, 0,120,132,132, 76, 0, 0,120,132,132,132,120, 0, 8,252,
+  72,132,132,120, 0, 0,120,148,148, 88, 0, 0, 0, 0, 0,216,
+ 148,164,108, 0, 4, 28,100,128,116, 12, 4, 0,216,148,164,108,
+   0, 4,255,132, 64, 0,120,148,148, 88, 0,136,252,136, 4,252,
+ 136, 4,248,128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 7,
+   4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 4, 4, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ 128,240,248, 24, 28, 14, 14, 28, 24,120,240,192,128, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,128,240,
+ 248, 24, 28, 12, 14, 14, 28, 24,248,240,128, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,248,
+ 255, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15,255,248, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,248,255, 15,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 15,255,248, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 8, 0, 8, 0, 28,252,
+ 248,128, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8,224,255, 63,
+   9, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 9, 63,255,224,
+   8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8,224,255, 63, 9, 0,
+   8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 9, 15, 15, 0, 8, 0,
+   8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   7, 63,252,224, 0, 0, 0, 0, 0, 0,128,192,252,127, 7, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 63,
+ 252,224, 0, 0, 0, 0, 0, 0, 0,192,252,127, 7, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 1, 7, 15, 28, 24, 24, 28, 15, 7, 1, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   1, 7, 15, 28, 24, 24, 28, 12, 15, 7, 1, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+};
+
+
+
+
 static const uint8_t Font3x6[65][3] = {
     0x00, 0x00, 0x00,
     0x00, 0x5C, 0x00,
@@ -6656,10 +6743,99 @@ void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_colo
         }
     }
 }
-
-void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y)
+void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color)
+{
+ while(*str)
+ {
+  if(font)
+   glcd_WriteChar8X8(*str, color);
+  else
+   glcd_WriteChar3x6(*str, color);
+  str++;
+ }
+}
+void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font)
 {
 
     glcd_SetCursor(x, y);
-    glcd_WriteString(str, len, F8X8, 1);
+    if(font){
+        glcd_WriteString(str, len, F8X8, 1);
+    }
+    else{
+        glcd_WriteString(str, len, F3X6, 1);
+    }
+}
+
+
+
+void glcd_Image()
+{
+  unsigned char cs;
+ int ptr=0;
+
+ unsigned char i, j;
+
+
+ for(i = 0; i < 8; ++i)
+ {
+
+  for(cs=0;cs<=1;cs++)
+  {
+   LATBbits.LATB2=0;
+      glcd_WriteByte(cs, 0x40);
+    glcd_WriteByte(cs, i | 0xB8);
+      LATBbits.LATB2=1;
+
+
+   for(j = 0; j < 64; ++j)
+   {
+
+    glcd_WriteByte(cs, acceuil[ptr]);
+    ptr+=1;
+   }
+  }
+ }
+
+     LATBbits.LATB0=0;
+     LATBbits.LATB1=0;
+}
+void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned char end,unsigned char color)
+{
+    if(xory){
+    for (int i=start;i<end;i++){
+        glcd_PlotPixel(i,pos,color);
+    }}
+    else
+    {
+        for(int y=start;y<end;y++){
+            glcd_PlotPixel(pos,y,color);
+        }
+    }
+}
+void caddrillage(){
+     glcd_line(30,0,0,51,1);
+     glcd_line(60,0,0,51,1);
+     glcd_line(90,0,0,51,1);
+     glcd_line(25,1,0,120,1);
+}
+void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color)
+{
+    if(xory){
+
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posx+i,posy-i,color);
+        }
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posx-i,posy-i,color);
+        }
+    }
+    else{
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posy+i,posx+i,color);
+        }
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posy+i,posx-i,color);
+        }
+    }
+
 }

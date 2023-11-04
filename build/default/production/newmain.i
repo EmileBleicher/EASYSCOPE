@@ -5991,20 +5991,30 @@ void glcd_WriteChar3x6(unsigned char ch, glcd_color_t color);
 # 162 "./glcd.h"
 void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_color_t color);
 # 172 "./glcd.h"
-void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y);
+void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font);
+void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned char end,unsigned char color);
+void glcd_Image();
+void caddrillage();
+void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color);
+void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color);
 # 14 "./main.h" 2
 
 # 1 "./oscilloscope.h" 1
-# 10 "./oscilloscope.h"
+# 11 "./oscilloscope.h"
     void init_ADC();
     void InitTimer0(unsigned char Hb, unsigned char Lb);
+    void init_external_interupt();
+    void print_oscylocope();
     void T0_Interupt( int val);
     void ADC_Interupt(int k);
+    void external_interupt(int k);
     void Frequence_Echantillonage(int *valeur);
+    int Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
-    int Amplitude_Echantillonage();
-    void init_external_interupt();
+    void ADC_Recording(int print_point);
+    void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
+    void print_Trigger(float value,int k);
 # 15 "./main.h" 2
 # 8 "newmain.c" 2
 
@@ -6026,19 +6036,20 @@ void __attribute__((picinterrupt(("")))) ISR() {
     if(INTCONbits.TMR0IF ){
   T0_Interupt(val); }
     if(RBIF==1){
-        glcd_text_write("Interupt", 20, 1, 1);
-        RBIF=0;
-    }
-
-
+        external_interupt(Amp);}
 }
 
-void main(void) {
+void main(void)
+{
     glcd_Init(GLCD_ON);
+    glcd_Image();
+    _delay((unsigned long)((1000)*(8000000/4000.0)));
+    glcd_FillScreen(0);
+    print_oscylocope();
     init_ADC();
     InitTimer0(0x03, 0xE8);
     init_external_interupt();
-    while(1){}
-
+    while(1){
+    }
     return;
 }
