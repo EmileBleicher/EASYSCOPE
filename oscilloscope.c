@@ -1,10 +1,15 @@
 #include "oscilloscope.h"
+#include <stdbool.h>
 #include <xc.h>
 #include "main.h"
 #define maSortie PORTAbits.RA4
 unsigned char i=0;
 unsigned char enable=0;
 unsigned char memo_GLCD[120];
+ float Trigger=2.5;
+ float memo_trigger=0;
+bool Start_Single=false;
+bool Oscilo_Mode=0;
 void init_external_interupt(){
     TRISB=192;
    INT1IE=1;
