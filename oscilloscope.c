@@ -180,4 +180,20 @@ void print_Trigger(float value,int k){
     memo_trigger=V;
     glcd_arrow(V,124,0,1); 
 }
+void print_oscylocope(){
+        caddrillage();
+        glcd_Rect(0, 0, 121, 51, 1);       
+        glcd_PlotPixel(0, 61, 0);
+        glcd_text_write("M:", 10, 1, 60,F3X6);
+        glcd_PlotPixel(6, 61, 0);
+        glcd_text_write("R", 10, 1, 15,F3X6);
+        glcd_PlotPixel(12, 61, 0);
+        glcd_text_write("A:", 10, 1, 60,F3X6);
+        glcd_PlotPixel(18, 61, 0);
+        glcd_text_write("5", 10, 1, 15,F3X6);
+        glcd_PlotPixel(24, 61, 0);
+        glcd_WriteString_2("TE:",0,1);
+        glcd_PlotPixel(32, 61, 0);
+        glcd_WriteString_2("10",0,1);
+        
 }
