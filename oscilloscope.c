@@ -108,13 +108,6 @@ void reset_recording(){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
     }
-    int ADC_Value=ADRESH;
-    int print_ADC=50-(ADC_Value/k);
-    memo_GLCD[i]=print_ADC;
-    glcd_PlotPixel(i,print_ADC , 1);
-    ADIF = 0;
-    i++;
-    
 }
 void debug (int n,int val){
     char debug[10];
