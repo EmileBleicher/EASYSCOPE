@@ -114,6 +114,8 @@ void debug (int n,int val){
     sprintf(&debug,"%d=%d",n,val);
     glcd_text_write("          ", 10,1,10*n);
     glcd_text_write(debug, 10, 1, 10*n);
+    glcd_text_write("          ", 10,1,10*n,0);
+    glcd_text_write(debug, 10, 1, 10*n,0);
 }
 int ADC_8to10(){
     unsigned int adc_value;  // Une variable pour stocker les 10 bits de l'ADC
