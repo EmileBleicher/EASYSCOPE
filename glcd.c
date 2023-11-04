@@ -831,4 +831,24 @@ void caddrillage(){
      glcd_line(90,0,0,51,1);
      glcd_line(25,1,0,120,1);  
 }
+void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color)
+{	
+    if(xory){
+        
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posx+i,posy-i,color);
+        }
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posx-i,posy-i,color);
+        }
+    }
+    else{
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posy+i,posx+i,color);
+        }
+        for(int i=0;i<4;i++){
+            glcd_PlotPixel(posy+i,posx-i,color);
+        }
+    }
+    
 }
