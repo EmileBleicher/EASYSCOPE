@@ -169,6 +169,10 @@ void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_colo
  * @param x X position
  * @param y Y position
  */
-void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y);
-
+void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font);
+void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned char end,unsigned char color);
+void glcd_Image();
+void caddrillage();
+void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color);
+void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color);
 #endif /* GLCD_H */
