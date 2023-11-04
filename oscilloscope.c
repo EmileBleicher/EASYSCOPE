@@ -102,6 +102,8 @@ void ADC_Recording(int print_point){
         glcd_PlotPixel(i,print_point , 1);
         i++;
 }
+void reset_recording(){
+    for (int y=0;y<120;y++){
         if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
