@@ -771,4 +771,11 @@ void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_fo
     /* Place cursor and write the string */
     glcd_SetCursor(x, y);
     glcd_WriteString(str, len, F8X8, 1);
+    if(font){
+        glcd_WriteString(str, len, F8X8, 1);
+    }
+    else{
+        glcd_WriteString(str, len, F3X6, 1);
+    }
+}
 }
