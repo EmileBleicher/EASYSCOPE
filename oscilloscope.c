@@ -70,6 +70,13 @@ void ADC_Interupt(int k){
     ADIF = 0;
 }
 
+void Stay_Value(int ADC_Value,float Vtriger,int print_ADC){
+    float Volt_ADC=((float)ADC_Value/255.0)*5.0;
+    if(((Vtriger-0.1)<Volt_ADC)&&((Vtriger+0.1)>Volt_ADC)){//(Vtriger-0.10)<Volt_ADC)&&((Vtriger+0.10)>Volt_ADC)
+         Start_Single=true;
+         ADC_Recording(print_ADC);
+    }
+}
         i=0;
         enable=1;
         CHS0=1;
