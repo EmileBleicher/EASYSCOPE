@@ -87,8 +87,6 @@ void ADC_Recording(int print_point){
         GO_DONE=1;
         
     }
-    if(enable==1){
-        glcd_PlotPixel(i,memo_GLCD[i] , 0);
         if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
@@ -112,8 +110,6 @@ void reset_recording(){
 void debug (int n,int val){
     char debug[10];
     sprintf(&debug,"%d=%d",n,val);
-    glcd_text_write("          ", 10,1,10*n);
-    glcd_text_write(debug, 10, 1, 10*n);
     glcd_text_write("          ", 10,1,10*n,0);
     glcd_text_write(debug, 10, 1, 10*n,0);
 }
@@ -122,7 +118,7 @@ int ADC_8to10(){
     adc_value = (ADRESH << 2) | ADRESL;
     return adc_value;
 }
-;void Frequence_Echantillonage(int *valeur){
+void Frequence_Echantillonage(int *valeur){
     static int ok=0;
     ok++;
     *valeur=ADC_8to10();
@@ -132,15 +128,12 @@ int ADC_8to10(){
     GO_DONE=1;
 }
 int Amplitude_Echantillonage(){
-//    static int ok=0;
-//    ok++;
-//    debug(2,ok);
     int valeur=ADRESH/28;
-//    debug(3,valeur);
     valeur++;
     ADIF = 0;
     CHS1=0;
     CHS0=0;
+    print_Trigger(Trigger, valeur);
     return valeur;
 }
 void external_interupt(int k){
