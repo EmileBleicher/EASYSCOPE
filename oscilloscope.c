@@ -89,6 +89,9 @@ void ADC_Recording(int print_point){
     }
     if(enable==1){
         glcd_PlotPixel(i,memo_GLCD[i] , 0);
+        if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
+            glcd_PlotPixel(i,memo_GLCD[i] , 0);
+        }
     }
     int ADC_Value=ADRESH;
     int print_ADC=50-(ADC_Value/k);
