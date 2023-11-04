@@ -790,6 +790,7 @@ void glcd_Image()
 
   	// Boucle sur les pages verticales (d�calage de 2*8=16 pixel en haut)
   	// Boucle sur les pages verticales (d�calage de 2*8=16 pixel en haut)
+  	// Boucle sur les pages verticales (d�calage de 2*8=16 pixel en haut)
 	for(i = 0; i < 8; ++i)
 	{
 		// Boucle sur les deux pages horizontales
@@ -800,10 +801,12 @@ void glcd_Image()
  			glcd_WriteByte(cs, i | 0xB8);	// Adresse de la page 0+i
    			GLCD_RS=1;						// Envoi de donn�e
    			GLCD_RS=1;						// Envoi de donn�e
+   			GLCD_RS=1;						// Envoi de donn�e
 			
 			// Boucle sur les octets horizontaux
 			for(j = 0; j < 64; ++j)
 			{
+				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donn�e
 				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donn�e
 				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donn�e
 				glcd_WriteByte(cs, acceuil[ptr]);
