@@ -143,3 +143,33 @@ int Amplitude_Echantillonage(){
     CHS0=0;
     return valeur;
 }
+void external_interupt(int k){
+    if((PORTBbits.RB6==0)&&(PORTBbits.RB7==1)){
+        Oscilo_Mode=~Oscilo_Mode;
+        if(Oscilo_Mode){
+            glcd_PlotPixel(6, 61, 0);
+            glcd_text_write("S", 10, 1, 15,F3X6);
+            reset_recording();
+        }
+        else{
+            glcd_PlotPixel(6, 61, 0);
+            glcd_text_write("R", 10, 1, 15,F3X6);
+        }
+        
+    } 
+    else if ((PORTBbits.RB6==1)&&(PORTBbits.RB7==0)){
+        
+        if(Trigger==5){
+            Trigger=0.5;
+        }else{
+            Trigger+=0.5;
+        }
+        print_Trigger(Trigger, k);
+        
+    }
+    else if((PORTBbits.RB6==0)&&(PORTBbits.RB7==0)){
+        
+    }
+    RBIF=0;
+}
+}
