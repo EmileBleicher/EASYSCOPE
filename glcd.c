@@ -778,4 +778,38 @@ void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_fo
         glcd_WriteString(str, len, F3X6, 1);
     }
 }
+//************************************************************************
+// void glcd_Image(void)
+//************************************************************************
+void glcd_Image()
+{
+ 	unsigned char cs;
+	int ptr=0;	// pointeur display    
+
+	unsigned char i, j;
+
+  	// Boucle sur les pages verticales (d�calage de 2*8=16 pixel en haut)
+	for(i = 0; i < 8; ++i)
+	{
+		// Boucle sur les deux pages horizontales
+		for(cs=0;cs<=1;cs++)
+		{
+			GLCD_RS=0;						// Envoi instruction
+    		glcd_WriteByte(cs, 0x40);		// Adresse horizontal 0
+ 			glcd_WriteByte(cs, i | 0xB8);	// Adresse de la page 0+i
+   			GLCD_RS=1;						// Envoi de donn�e
+			
+			// Boucle sur les octets horizontaux
+			for(j = 0; j < 64; ++j)
+			{
+				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donn�e
+				glcd_WriteByte(cs, acceuil[ptr]);
+				ptr+=1;
+			}
+		}
+	}
+  
+     GLCD_CS1=0;   
+     GLCD_CS2=0;
+}
 }
