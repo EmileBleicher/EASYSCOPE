@@ -755,6 +755,18 @@ void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_colo
 }
 
 void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y)
+void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color)
+{	
+	while(*str)
+	{
+		if(font)
+			glcd_WriteChar8X8(*str, color);
+		else 
+			glcd_WriteChar3x6(*str, color);
+		str++;
+	}
+}
+void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font)
 {
     /* Place cursor and write the string */
     glcd_SetCursor(x, y);
