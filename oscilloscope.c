@@ -77,11 +77,15 @@ void Stay_Value(int ADC_Value,float Vtriger,int print_ADC){
          ADC_Recording(print_ADC);
     }
 }
+void ADC_Recording(int print_point){
+    if((i>120)){
         i=0;
         enable=1;
+        Start_Single=false;
         CHS0=1;
         CHS1=0;
         GO_DONE=1;
+        
     }
     if(enable==1){
         glcd_PlotPixel(i,memo_GLCD[i] , 0);
