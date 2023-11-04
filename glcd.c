@@ -753,8 +753,6 @@ void glcd_WriteString(const char str[], uint8_t len, glcd_font_t font, glcd_colo
         }
     }
 }
-
-void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y)
 void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color)
 {	
 	while(*str)
@@ -770,7 +768,6 @@ void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_fo
 {
     /* Place cursor and write the string */
     glcd_SetCursor(x, y);
-    glcd_WriteString(str, len, F8X8, 1);
     if(font){
         glcd_WriteString(str, len, F8X8, 1);
     }
@@ -788,9 +785,7 @@ void glcd_Image()
 
 	unsigned char i, j;
 
-  	// Boucle sur les pages verticales (dï¿½calage de 2*8=16 pixel en haut)
-  	// Boucle sur les pages verticales (dï¿½calage de 2*8=16 pixel en haut)
-  	// Boucle sur les pages verticales (dï¿½calage de 2*8=16 pixel en haut)
+  	// Boucle sur les pages verticales (décalage de 2*8=16 pixel en haut)
 	for(i = 0; i < 8; ++i)
 	{
 		// Boucle sur les deux pages horizontales
@@ -799,16 +794,12 @@ void glcd_Image()
 			GLCD_RS=0;						// Envoi instruction
     		glcd_WriteByte(cs, 0x40);		// Adresse horizontal 0
  			glcd_WriteByte(cs, i | 0xB8);	// Adresse de la page 0+i
-   			GLCD_RS=1;						// Envoi de donnï¿½e
-   			GLCD_RS=1;						// Envoi de donnï¿½e
-   			GLCD_RS=1;						// Envoi de donnï¿½e
+   			GLCD_RS=1;						// Envoi de donnée
 			
 			// Boucle sur les octets horizontaux
 			for(j = 0; j < 64; ++j)
 			{
-				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donnï¿½e
-				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donnï¿½e
-				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donnï¿½e
+				//glcd_WriteByte(cs, TopoVector[ptr]);  // Envoi de l'octet de donnée
 				glcd_WriteByte(cs, acceuil[ptr]);
 				ptr+=1;
 			}
