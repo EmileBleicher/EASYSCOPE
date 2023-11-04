@@ -92,6 +92,16 @@ void ADC_Recording(int print_point){
         if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
+        
+        if((i>1)&&(Oscilo_Mode==1)){
+            if(memo_GLCD[0]<memo_GLCD[1]){
+                Start_Single=false;
+            }
+        }
+        memo_GLCD[i]=print_point;
+        glcd_PlotPixel(i,print_point , 1);
+        i++;
+}
         if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
