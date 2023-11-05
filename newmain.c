@@ -12,16 +12,16 @@
 #pragma config DEBUG = OFF		//Debug ON
 #define maSortie PORTAbits.RA4
 int val=18;
-int Amp=5;
+float Amp=1;
 
 void __interrupt() ISR() {
     if (PIR1bits.ADIF && CHS0==0 && CHS1==0) {
         ADC_Interupt(Amp);}
-    if (PIR1bits.ADIF && CHS0==1) {
+    if (PIR1bits.ADIF && CHS0==1 && CHS1==0) {
         Frequence_Echantillonage(&val);}
-    if (PIR1bits.ADIF && CHS1==1){
+    if (PIR1bits.ADIF && CHS0==0 && CHS1==1){
        Amp=Amplitude_Echantillonage();}//A revoir notament en modiffiant l'équation
-    if(INTCONbits.TMR0IF ){			//Est-ce que Timer0 a causé l'interruption?
+    if(INTCONbits.TMR0IF){			//Est-ce que Timer0 a causé l'interruption?
 		T0_Interupt(val);  }      	//Si oui, exécuter T0 ISR (interrupt service routine)
     if(RBIF==1){
         external_interupt(Amp);}   
