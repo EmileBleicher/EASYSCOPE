@@ -1632,10 +1632,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-[v F3634 `Cuc ~T0 @X0 -> 3 `i t ]
+[v F3638 `Cuc ~T0 @X0 -> 3 `i t ]
 "94
 [; ;glcd.c: 94: static const uint8_t Font3x6[65][3] = {
-[v _Font3x6 `F3634 ~T0 @X0 -> 65 `i s ]
+[v _Font3x6 `F3638 ~T0 @X0 -> 65 `i s ]
 [i _Font3x6
 :U ..
 :U ..
@@ -5204,17 +5204,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _caddrillage ]
 [f ]
 "826
-[; ;glcd.c: 826:      glcd_line(30,0,0,51,1);
-[e ( _glcd_line (4 , , , , -> -> 30 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 51 `i `uc -> -> 1 `i `uc ]
+[; ;glcd.c: 826:      glcd_line(30,0,13,63,1);
+[e ( _glcd_line (4 , , , , -> -> 30 `i `uc -> -> 0 `i `uc -> -> 13 `i `uc -> -> 63 `i `uc -> -> 1 `i `uc ]
 "827
-[; ;glcd.c: 827:      glcd_line(60,0,0,51,1);
-[e ( _glcd_line (4 , , , , -> -> 60 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 51 `i `uc -> -> 1 `i `uc ]
+[; ;glcd.c: 827:      glcd_line(60,0,13,63,1);
+[e ( _glcd_line (4 , , , , -> -> 60 `i `uc -> -> 0 `i `uc -> -> 13 `i `uc -> -> 63 `i `uc -> -> 1 `i `uc ]
 "828
-[; ;glcd.c: 828:      glcd_line(90,0,0,51,1);
-[e ( _glcd_line (4 , , , , -> -> 90 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 51 `i `uc -> -> 1 `i `uc ]
+[; ;glcd.c: 828:      glcd_line(90,0,13,63,1);
+[e ( _glcd_line (4 , , , , -> -> 90 `i `uc -> -> 0 `i `uc -> -> 13 `i `uc -> -> 63 `i `uc -> -> 1 `i `uc ]
 "829
-[; ;glcd.c: 829:      glcd_line(25,1,0,120,1);
-[e ( _glcd_line (4 , , , , -> -> 25 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc -> -> 120 `i `uc -> -> 1 `i `uc ]
+[; ;glcd.c: 829:      glcd_line(38,1,0,120,1);
+[e ( _glcd_line (4 , , , , -> -> 38 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc -> -> 120 `i `uc -> -> 1 `i `uc ]
 "830
 [; ;glcd.c: 830: }
 [e :UE 466 ]

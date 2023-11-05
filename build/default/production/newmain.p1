@@ -23,14 +23,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 9123: extern volatile __bit CHS1 __attribute__((address(0x7E13)));
 [v _CHS1 `Vb ~T0 @X0 0 e@32275 ]
 "16 ./oscilloscope.h
-[; ;./oscilloscope.h: 16:     void ADC_Interupt(int k);
-[v _ADC_Interupt `(v ~T0 @X0 0 ef1`i ]
+[; ;./oscilloscope.h: 16:     void ADC_Interupt(float k);
+[v _ADC_Interupt `(v ~T0 @X0 0 ef1`f ]
 "18
 [; ;./oscilloscope.h: 18:     void Frequence_Echantillonage(int *valeur);
 [v _Frequence_Echantillonage `(v ~T0 @X0 0 ef1`*i ]
 "19
-[; ;./oscilloscope.h: 19:     int Amplitude_Echantillonage();
-[v _Amplitude_Echantillonage `(i ~T0 @X0 0 e? ]
+[; ;./oscilloscope.h: 19:     float Amplitude_Echantillonage();
+[v _Amplitude_Echantillonage `(f ~T0 @X0 0 e? ]
 "8588 D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 8588:     struct {
 [s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -57,8 +57,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 10386: extern volatile __bit RBIF __attribute__((address(0x7F90)));
 [v _RBIF `Vb ~T0 @X0 0 e@32656 ]
 "17 ./oscilloscope.h
-[; ;./oscilloscope.h: 17:     void external_interupt(int k);
-[v _external_interupt `(v ~T0 @X0 0 ef1`i ]
+[; ;./oscilloscope.h: 17:     void external_interupt(float k);
+[v _external_interupt `(v ~T0 @X0 0 ef1`f ]
 [p mainexit ]
 "32 newmain.c
 [c E3532 0 1 .. ]
@@ -605,7 +605,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 9:        Amp=Amplitude_Echantillonage();}
 [p x PWRT  =  OFF ]
 "10
-[; ;newmain.c: 10:     if(INTCONbits.TMR0IF ){
+[; ;newmain.c: 10:     if(INTCONbits.TMR0IF){
 [p x BOR  =  OFF ]
 "11
 [; ;newmain.c: 11:   T0_Interupt(val); }
@@ -621,9 +621,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "15
 [; ;newmain.c: 15: 
-[v _Amp `i ~T0 @X0 1 e ]
+[v _Amp `f ~T0 @X0 1 e ]
 [i _Amp
--> 5 `i
+-> -> 1 `i `f
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 "17
@@ -643,7 +643,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 370 ]
 "20
 [; ;newmain.c: 20:     _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e $ ! && != -> . . _PIR1bits 0 6 `i -> 0 `i == -> _CHS0 `i -> 1 `i 371  ]
+[e $ ! && && != -> . . _PIR1bits 0 6 `i -> 0 `i == -> _CHS0 `i -> 1 `i == -> _CHS1 `i -> 0 `i 371  ]
 {
 "21
 [; ;newmain.c: 21:     glcd_FillScreen(0);
@@ -652,7 +652,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 371 ]
 "22
 [; ;newmain.c: 22:     print_oscylocope();
-[e $ ! && != -> . . _PIR1bits 0 6 `i -> 0 `i == -> _CHS1 `i -> 1 `i 372  ]
+[e $ ! && && != -> . . _PIR1bits 0 6 `i -> 0 `i == -> _CHS0 `i -> 0 `i == -> _CHS1 `i -> 1 `i 372  ]
 {
 "23
 [; ;newmain.c: 23:     init_ADC();

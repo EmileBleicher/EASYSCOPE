@@ -34,26 +34,46 @@ F3X6 0
 F8X8 1
 ]
 "91 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
-[e E3572 . `uc
+[e E3576 . `uc
 GLCD_BLUE 0
 GLCD_WHITE 1
 ]
-"113
-[e E3568 . `uc
+"108
+[e E3572 . `uc
 F3X6 0
 F8X8 1
 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 [v i2___awdiv __awdiv `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
+"193 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
+[v _pad pad `(v  1 s 1 pad ]
+"513
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+"587
+[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
+"1158
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1817
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\ftadd.c
@@ -64,8 +84,18 @@ F8X8 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -74,6 +104,10 @@ F8X8 1
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul64.c
@@ -107,8 +141,6 @@ F8X8 1
 "736
 [v _glcd_WriteString glcd_WriteString `(v  1 e 1 0 ]
 [v i2_glcd_WriteString glcd_WriteString `(v  1 e 1 0 ]
-"756
-[v _glcd_WriteString_2 glcd_WriteString_2 `(v  1 e 1 0 ]
 "767
 [v _glcd_text_write glcd_text_write `(v  1 e 1 0 ]
 [v i2_glcd_text_write glcd_text_write `(v  1 e 1 0 ]
@@ -138,25 +170,32 @@ F8X8 1
 [v _Stay_Value Stay_Value `(v  1 e 1 0 ]
 "80
 [v _ADC_Recording ADC_Recording `(v  1 e 1 0 ]
-"103
-[v _reset_recording reset_recording `(v  1 e 1 0 ]
 "116
-[v _ADC_8to10 ADC_8to10 `(i  1 e 2 0 ]
-"121
 [v _Frequence_Echantillonage Frequence_Echantillonage `(v  1 e 1 0 ]
-"130
-[v _Amplitude_Echantillonage Amplitude_Echantillonage `(i  1 e 2 0 ]
-"139
+"126
+[v _Amplitude_Echantillonage Amplitude_Echantillonage `(f  1 e 4 0 ]
+"137
 [v _external_interupt external_interupt `(v  1 e 1 0 ]
-"168
+"163
 [v _print_Trigger print_Trigger `(v  1 e 1 0 ]
-"176
+"172
 [v _print_oscylocope print_oscylocope `(v  1 e 1 0 ]
+"178
+[v _print_Vmax print_Vmax `(v  1 e 1 0 ]
+"184
+[v _print_Techantillonage print_Techantillonage `(v  1 e 1 0 ]
+"153 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"154
+[v _flags flags `uc  1 s 1 flags ]
+"185
+[v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
 "2314 D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "2453
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S562 . 1 `uc 1 RB0 1 0 :1:0 
+[s S572 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -166,7 +205,7 @@ F8X8 1
 `uc 1 RB7 1 0 :1:7 
 ]
 "2483
-[s S571 . 1 `uc 1 INT0 1 0 :1:0 
+[s S581 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -174,11 +213,11 @@ F8X8 1
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S579 . 1 `uc 1 . 1 0 :3:0 
+[s S589 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S582 . 1 `S562 1 . 1 0 `S571 1 . 1 0 `S579 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES582  1 e 1 @3969 ]
+[u S592 . 1 `S572 1 . 1 0 `S581 1 . 1 0 `S589 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES592  1 e 1 @3969 ]
 "2563
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "2705
@@ -357,7 +396,7 @@ F8X8 1
 "14 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\newmain.c
 [v _val val `i  1 e 2 0 ]
 "15
-[v _Amp Amp `i  1 e 2 0 ]
+[v _Amp Amp `f  1 e 4 0 ]
 "6 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _i i `uc  1 e 1 0 ]
 "7
@@ -377,71 +416,50 @@ F8X8 1
 {
 "43
 } 0
-"176 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
+"172 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _print_oscylocope print_oscylocope `(v  1 e 1 0 ]
 {
-"192
+"177
 } 0
 "767 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\glcd.c
 [v _glcd_text_write glcd_text_write `(v  1 e 1 0 ]
 {
-[v glcd_text_write@str str `*.35Cuc  1 p 2 41 ]
-[v glcd_text_write@len len `uc  1 p 1 43 ]
-[v glcd_text_write@x x `uc  1 p 1 44 ]
-[v glcd_text_write@y y `uc  1 p 1 45 ]
-[v glcd_text_write@font font `E525  1 p 1 46 ]
+[v glcd_text_write@str str `*.35Cuc  1 p 2 1 ]
+[v glcd_text_write@len len `uc  1 p 1 3 ]
+[v glcd_text_write@x x `uc  1 p 1 4 ]
+[v glcd_text_write@y y `uc  1 p 1 5 ]
+[v glcd_text_write@font font `E525  1 p 1 6 ]
 "777
 } 0
 "736
 [v _glcd_WriteString glcd_WriteString `(v  1 e 1 0 ]
 {
 "738
-[v glcd_WriteString@i i `uc  1 a 1 40 ]
+[v glcd_WriteString@i i `uc  1 a 1 0 ]
 "736
-[v glcd_WriteString@str str `*.35Cuc  1 p 2 33 ]
-[v glcd_WriteString@len len `uc  1 p 1 35 ]
-[v glcd_WriteString@font font `E525  1 p 1 36 ]
-[v glcd_WriteString@color color `E529  1 p 1 37 ]
+[v glcd_WriteString@str str `*.35Cuc  1 p 2 29 ]
+[v glcd_WriteString@len len `uc  1 p 1 31 ]
+[v glcd_WriteString@font font `E525  1 p 1 32 ]
+[v glcd_WriteString@color color `E529  1 p 1 33 ]
 "755
-} 0
-"610
-[v _glcd_SetCursor glcd_SetCursor `(v  1 e 1 0 ]
-{
-[v glcd_SetCursor@xpos xpos `uc  1 a 1 wreg ]
-"612
-[v glcd_SetCursor@side side `E521  1 a 1 25 ]
-"610
-[v glcd_SetCursor@xpos xpos `uc  1 a 1 wreg ]
-[v glcd_SetCursor@ypos ypos `uc  1 p 1 24 ]
-"612
-[v glcd_SetCursor@xpos xpos `uc  1 a 1 26 ]
-"632
-} 0
-"756
-[v _glcd_WriteString_2 glcd_WriteString_2 `(v  1 e 1 0 ]
-{
-[v glcd_WriteString_2@str str `*.32uc  1 p 2 33 ]
-[v glcd_WriteString_2@font font `uc  1 p 1 35 ]
-[v glcd_WriteString_2@color color `uc  1 p 1 36 ]
-"766
 } 0
 "634
 [v _glcd_WriteChar8X8 glcd_WriteChar8X8 `(v  1 e 1 0 ]
 {
 [v glcd_WriteChar8X8@ch ch `uc  1 a 1 wreg ]
 "659
-[v glcd_WriteChar8X8@i i `uc  1 a 1 31 ]
+[v glcd_WriteChar8X8@i i `uc  1 a 1 27 ]
 "638
-[v glcd_WriteChar8X8@chr chr `us  1 a 2 28 ]
+[v glcd_WriteChar8X8@chr chr `us  1 a 2 24 ]
 "637
-[v glcd_WriteChar8X8@side side `E521  1 a 1 32 ]
+[v glcd_WriteChar8X8@side side `E521  1 a 1 28 ]
 "636
-[v glcd_WriteChar8X8@xpos xpos `uc  1 a 1 30 ]
+[v glcd_WriteChar8X8@xpos xpos `uc  1 a 1 26 ]
 "634
 [v glcd_WriteChar8X8@ch ch `uc  1 a 1 wreg ]
-[v glcd_WriteChar8X8@color color `E529  1 p 1 24 ]
+[v glcd_WriteChar8X8@color color `E529  1 p 1 20 ]
 "637
-[v glcd_WriteChar8X8@ch ch `uc  1 a 1 27 ]
+[v glcd_WriteChar8X8@ch ch `uc  1 a 1 23 ]
 "684
 } 0
 "686
@@ -449,34 +467,47 @@ F8X8 1
 {
 [v glcd_WriteChar3x6@ch ch `uc  1 a 1 wreg ]
 "710
-[v glcd_WriteChar3x6@i i `uc  1 a 1 29 ]
+[v glcd_WriteChar3x6@i i `uc  1 a 1 25 ]
 "689
-[v glcd_WriteChar3x6@side side `E521  1 a 1 30 ]
+[v glcd_WriteChar3x6@side side `E521  1 a 1 26 ]
 "688
-[v glcd_WriteChar3x6@xpos xpos `uc  1 a 1 28 ]
+[v glcd_WriteChar3x6@xpos xpos `uc  1 a 1 24 ]
 "686
 [v glcd_WriteChar3x6@ch ch `uc  1 a 1 wreg ]
-[v glcd_WriteChar3x6@color color `E529  1 p 1 24 ]
+[v glcd_WriteChar3x6@color color `E529  1 p 1 20 ]
 "689
-[v glcd_WriteChar3x6@ch ch `uc  1 a 1 27 ]
+[v glcd_WriteChar3x6@ch ch `uc  1 a 1 23 ]
 "734
+} 0
+"610
+[v _glcd_SetCursor glcd_SetCursor `(v  1 e 1 0 ]
+{
+[v glcd_SetCursor@xpos xpos `uc  1 a 1 wreg ]
+"612
+[v glcd_SetCursor@side side `E521  1 a 1 21 ]
+"610
+[v glcd_SetCursor@xpos xpos `uc  1 a 1 wreg ]
+[v glcd_SetCursor@ypos ypos `uc  1 p 1 20 ]
+"612
+[v glcd_SetCursor@xpos xpos `uc  1 a 1 22 ]
+"632
 } 0
 "566
 [v _glcd_Rect glcd_Rect `(v  1 e 1 0 ]
 {
 [v glcd_Rect@xs xs `uc  1 a 1 wreg ]
 "580
-[v glcd_Rect@j j `uc  1 a 1 37 ]
+[v glcd_Rect@j j `uc  1 a 1 33 ]
 "578
-[v glcd_Rect@i i `uc  1 a 1 36 ]
+[v glcd_Rect@i i `uc  1 a 1 32 ]
 "566
 [v glcd_Rect@xs xs `uc  1 a 1 wreg ]
-[v glcd_Rect@ys ys `uc  1 p 1 31 ]
-[v glcd_Rect@xe xe `uc  1 p 1 32 ]
-[v glcd_Rect@ye ye `uc  1 p 1 33 ]
-[v glcd_Rect@color color `E529  1 p 1 34 ]
+[v glcd_Rect@ys ys `uc  1 p 1 27 ]
+[v glcd_Rect@xe xe `uc  1 p 1 28 ]
+[v glcd_Rect@ye ye `uc  1 p 1 29 ]
+[v glcd_Rect@color color `E529  1 p 1 30 ]
 "568
-[v glcd_Rect@xs xs `uc  1 a 1 35 ]
+[v glcd_Rect@xs xs `uc  1 a 1 31 ]
 "588
 } 0
 "825
@@ -489,17 +520,17 @@ F8X8 1
 {
 [v glcd_line@pos pos `uc  1 a 1 wreg ]
 "820
-[v glcd_line@y y `i  1 a 2 41 ]
+[v glcd_line@y y `i  1 a 2 3 ]
 "815
-[v glcd_line@i i `i  1 a 2 39 ]
+[v glcd_line@i i `i  1 a 2 1 ]
 "812
 [v glcd_line@pos pos `uc  1 a 1 wreg ]
-[v glcd_line@xory xory `uc  1 p 1 31 ]
-[v glcd_line@start start `uc  1 p 1 32 ]
-[v glcd_line@end end `uc  1 p 1 33 ]
-[v glcd_line@color color `uc  1 p 1 34 ]
+[v glcd_line@xory xory `uc  1 p 1 27 ]
+[v glcd_line@start start `uc  1 p 1 28 ]
+[v glcd_line@end end `uc  1 p 1 29 ]
+[v glcd_line@color color `uc  1 p 1 30 ]
 "814
-[v glcd_line@pos pos `uc  1 a 1 38 ]
+[v glcd_line@pos pos `uc  1 a 1 0 ]
 "824
 } 0
 "525
@@ -507,15 +538,15 @@ F8X8 1
 {
 [v glcd_PlotPixel@xpos xpos `uc  1 a 1 wreg ]
 "528
-[v glcd_PlotPixel@side side `E521  1 a 1 30 ]
+[v glcd_PlotPixel@side side `E521  1 a 1 26 ]
 "527
-[v glcd_PlotPixel@data data `uc  1 a 1 29 ]
+[v glcd_PlotPixel@data data `uc  1 a 1 25 ]
 "525
 [v glcd_PlotPixel@xpos xpos `uc  1 a 1 wreg ]
-[v glcd_PlotPixel@ypos ypos `uc  1 p 1 24 ]
-[v glcd_PlotPixel@color color `E529  1 p 1 25 ]
+[v glcd_PlotPixel@ypos ypos `uc  1 p 1 20 ]
+[v glcd_PlotPixel@color color `E529  1 p 1 21 ]
 "528
-[v glcd_PlotPixel@xpos xpos `uc  1 a 1 28 ]
+[v glcd_PlotPixel@xpos xpos `uc  1 a 1 24 ]
 "564
 } 0
 "495
@@ -523,24 +554,24 @@ F8X8 1
 {
 [v glcd_ReadByte@side side `E521  1 a 1 wreg ]
 "497
-[v glcd_ReadByte@data data `uc  1 a 1 15 ]
+[v glcd_ReadByte@data data `uc  1 a 1 11 ]
 "495
 [v glcd_ReadByte@side side `E521  1 a 1 wreg ]
 "499
-[v glcd_ReadByte@side side `E521  1 a 1 14 ]
+[v glcd_ReadByte@side side `E521  1 a 1 10 ]
 "523
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 20 ]
+[v ___awdiv@quotient quotient `i  1 a 2 16 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 19 ]
-[v ___awdiv@counter counter `uc  1 a 1 18 ]
+[v ___awdiv@sign sign `uc  1 a 1 15 ]
+[v ___awdiv@counter counter `uc  1 a 1 14 ]
 "7
-[v ___awdiv@dividend dividend `i  1 p 2 14 ]
-[v ___awdiv@divisor divisor `i  1 p 2 16 ]
+[v ___awdiv@dividend dividend `i  1 p 2 10 ]
+[v ___awdiv@divisor divisor `i  1 p 2 12 ]
 "41
 } 0
 "13 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
@@ -559,7 +590,7 @@ F8X8 1
 [v glcd_Init@mode mode `E517  1 a 1 wreg ]
 [v glcd_Init@mode mode `E517  1 a 1 wreg ]
 "425
-[v glcd_Init@mode mode `E517  1 a 1 28 ]
+[v glcd_Init@mode mode `E517  1 a 1 24 ]
 "465
 } 0
 "590
@@ -567,25 +598,25 @@ F8X8 1
 {
 [v glcd_FillScreen@color color `E529  1 a 1 wreg ]
 "602
-[v glcd_FillScreen@j j `uc  1 a 1 25 ]
+[v glcd_FillScreen@j j `uc  1 a 1 21 ]
 "593
-[v glcd_FillScreen@i i `uc  1 a 1 26 ]
+[v glcd_FillScreen@i i `uc  1 a 1 22 ]
 "590
 [v glcd_FillScreen@color color `E529  1 a 1 wreg ]
 "593
-[v glcd_FillScreen@color color `E529  1 a 1 24 ]
+[v glcd_FillScreen@color color `E529  1 a 1 20 ]
 "608
 } 0
 "781
 [v _glcd_Image glcd_Image `(v  1 e 1 0 ]
 {
 "784
-[v glcd_Image@ptr ptr `i  1 a 2 24 ]
+[v glcd_Image@ptr ptr `i  1 a 2 20 ]
 "783
-[v glcd_Image@cs cs `uc  1 a 1 28 ]
+[v glcd_Image@cs cs `uc  1 a 1 24 ]
 "786
-[v glcd_Image@i i `uc  1 a 1 27 ]
-[v glcd_Image@j j `uc  1 a 1 26 ]
+[v glcd_Image@i i `uc  1 a 1 23 ]
+[v glcd_Image@j j `uc  1 a 1 22 ]
 "811
 } 0
 "467
@@ -593,15 +624,15 @@ F8X8 1
 {
 [v glcd_WriteByte@side side `E521  1 a 1 wreg ]
 [v glcd_WriteByte@side side `E521  1 a 1 wreg ]
-[v glcd_WriteByte@data data `uc  1 p 1 22 ]
+[v glcd_WriteByte@data data `uc  1 p 1 18 ]
 "469
-[v glcd_WriteByte@side side `E521  1 a 1 23 ]
+[v glcd_WriteByte@side side `E521  1 a 1 19 ]
 "493
 } 0
 "32 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _InitTimer0 InitTimer0 `(v  1 e 1 0 ]
 {
-[v InitTimer0@Lb Lb `uc  1 p 1 14 ]
+[v InitTimer0@Lb Lb `uc  1 p 1 10 ]
 "43
 } 0
 "17 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\newmain.c
@@ -609,11 +640,54 @@ F8X8 1
 {
 "28
 } 0
-"139 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
+"137 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _external_interupt external_interupt `(v  1 e 1 0 ]
 {
-[v external_interupt@k k `i  1 p 2 0 ]
-"167
+[v external_interupt@k k `f  1 p 4 38 ]
+"162
+} 0
+"44
+[v _T0_Interupt T0_Interupt `(v  1 e 1 0 ]
+{
+[v T0_Interupt@val val `i  1 p 2 0 ]
+"45
+[v T0_Interupt@z z `i  1 s 2 z ]
+"56
+} 0
+"116
+[v _Frequence_Echantillonage Frequence_Echantillonage `(v  1 e 1 0 ]
+{
+[v Frequence_Echantillonage@valeur valeur `*.30i  1 p 1 118 ]
+"117
+[v Frequence_Echantillonage@ok ok `i  1 s 2 ok ]
+"125
+} 0
+"184
+[v _print_Techantillonage print_Techantillonage `(v  1 e 1 0 ]
+{
+"185
+[v print_Techantillonage@affichage affichage `[10]uc  1 a 10 104 ]
+"186
+[v print_Techantillonage@A A `f  1 a 4 114 ]
+"184
+[v print_Techantillonage@time time `i  1 p 2 102 ]
+"189
+} 0
+"126
+[v _Amplitude_Echantillonage Amplitude_Echantillonage `(f  1 e 4 0 ]
+{
+"127
+[v Amplitude_Echantillonage@valeur valeur `f  1 a 4 120 ]
+"136
+} 0
+"178
+[v _print_Vmax print_Vmax `(v  1 e 1 0 ]
+{
+"179
+[v print_Vmax@affichage affichage `[10]uc  1 a 10 106 ]
+"178
+[v print_Vmax@A A `f  1 p 4 102 ]
+"183
 } 0
 "767 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\glcd.c
 [v i2_glcd_text_write glcd_text_write `(v  1 e 1 0 ]
@@ -686,12 +760,170 @@ F8X8 1
 [v i2glcd_SetCursor@xpos xpos `uc  1 a 1 12 ]
 "632
 } 0
-"103 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
-[v _reset_recording reset_recording `(v  1 e 1 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
 {
-"104
-[v reset_recording@y y `i  1 a 2 18 ]
-"109
+[u S1143 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+"13
+[s S1146 _IO_FILE 12 `S1143 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S1146  1 a 12 90 ]
+"12
+[v sprintf@ap ap `[1]*.30v  1 a 1 89 ]
+"9
+[v sprintf@s s `*.30uc  1 p 1 82 ]
+[v sprintf@fmt fmt `*.32Cuc  1 p 2 83 ]
+"23
+} 0
+"1817 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1820
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 80 ]
+[s S1178 _IO_FILE 0 ]
+"1817
+[v vfprintf@fp fp `*.30S1178  1 p 1 76 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 77 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 79 ]
+"1840
+} 0
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S1233 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v vfpfcnvrt@convarg convarg `S1233  1 a 4 69 ]
+"1179
+[v vfpfcnvrt@cp cp `*.32uc  1 a 2 74 ]
+[v vfpfcnvrt@c c `uc  1 a 1 73 ]
+[s S1178 _IO_FILE 0 ]
+"1177
+[v vfpfcnvrt@fp fp `*.30S1178  1 p 1 64 ]
+[v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 65 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 66 ]
+"1814
+} 0
+"1158
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+{
+"1164
+[v read_prec_or_width@c c `uc  1 a 1 8 ]
+"1159
+[v read_prec_or_width@n n `i  1 a 2 9 ]
+"1158
+[v read_prec_or_width@fmt fmt `*.30*.32Cuc  1 p 1 6 ]
+[v read_prec_or_width@ap ap `*.30[1]*.30v  1 p 1 7 ]
+"1171
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"587 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
+[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
+{
+[u S1196 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+"592
+[v efgtoa@u u `S1196  1 a 4 60 ]
+[v efgtoa@g g `S1196  1 a 4 54 ]
+"591
+[v efgtoa@l l `d  1 a 4 49 ]
+[v efgtoa@h h `d  1 a 4 45 ]
+"592
+[v efgtoa@ou ou `S1196  1 a 4 39 ]
+"590
+[v efgtoa@n n `i  1 a 2 58 ]
+[v efgtoa@i i `i  1 a 2 43 ]
+[v efgtoa@w w `i  1 a 2 37 ]
+[v efgtoa@e e `i  1 a 2 35 ]
+[v efgtoa@m m `i  1 a 2 33 ]
+[v efgtoa@d d `i  1 a 2 31 ]
+[v efgtoa@t t `i  1 a 2 24 ]
+[v efgtoa@p p `i  1 a 2 22 ]
+[v efgtoa@ne ne `i  1 a 2 20 ]
+"589
+[v efgtoa@sign sign `uc  1 a 1 53 ]
+[v efgtoa@nmode nmode `uc  1 a 1 30 ]
+[v efgtoa@mode mode `uc  1 a 1 29 ]
+[v efgtoa@pp pp `uc  1 a 1 28 ]
+[s S1178 _IO_FILE 0 ]
+"587
+[v efgtoa@fp fp `*.30S1178  1 p 1 12 ]
+[v efgtoa@f f `d  1 p 4 13 ]
+[v efgtoa@c c `uc  1 p 1 17 ]
+"868
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"5
+[v strcpy@d d `*.39uc  1 a 2 4 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 0 ]
+[v strcpy@src src `*.32Cuc  1 p 2 2 ]
+"8
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"8
+[v memcpy@s s `*.39Cuc  1 a 2 9 ]
+"7
+[v memcpy@d d `*.39uc  1 a 2 7 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 6 ]
+"4
+[v memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v memcpy@n n `ui  1 p 2 4 ]
+"18
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+{
+[v labs@a a `l  1 p 4 0 ]
+"4
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
+{
+[u S1318 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"5
+[v floorf@u u `S1318  1 a 4 63 ]
+"7
+[v floorf@m m `ul  1 a 4 57 ]
+"6
+[v floorf@e e `i  1 a 2 61 ]
+"3
+[v floorf@x x `f  1 p 4 47 ]
+"4
+[v floorf@F521 F521 `S1318  1 s 4 F521 ]
+"27
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+{
+[u S1318 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v ___fpclassifyf@u u `S1318  1 a 4 10 ]
+"7
+[v ___fpclassifyf@e e `i  1 a 2 8 ]
+"4
+[v ___fpclassifyf@x x `f  1 p 4 0 ]
+"5
+[v ___fpclassifyf@F465 F465 `S1318  1 s 4 F465 ]
+"11
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -700,97 +932,139 @@ F8X8 1
 [v ___fleq@ff2 ff2 `d  1 p 4 4 ]
 "12
 } 0
-"44 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
-[v _T0_Interupt T0_Interupt `(v  1 e 1 0 ]
+"513 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
 {
-[v T0_Interupt@val val `i  1 p 2 0 ]
-"45
-[v T0_Interupt@z z `i  1 s 2 z ]
-"56
+"516
+[v dtoa@i i `i  1 a 2 32 ]
+"518
+[v dtoa@p p `i  1 a 2 29 ]
+"516
+[v dtoa@w w `i  1 a 2 27 ]
+"515
+[v dtoa@s s `uc  1 a 1 31 ]
+[s S1178 _IO_FILE 0 ]
+"513
+[v dtoa@fp fp `*.30S1178  1 p 1 22 ]
+[v dtoa@d d `i  1 p 2 23 ]
+"583
 } 0
-"121
-[v _Frequence_Echantillonage Frequence_Echantillonage `(v  1 e 1 0 ]
+"193
+[v _pad pad `(v  1 s 1 pad ]
 {
-[v Frequence_Echantillonage@valeur valeur `*.30i  1 p 1 6 ]
-"122
-[v Frequence_Echantillonage@ok ok `i  1 s 2 ok ]
-"129
+"195
+[v pad@i i `i  1 a 2 20 ]
+[s S1178 _IO_FILE 0 ]
+"193
+[v pad@fp fp `*.30S1178  1 p 1 14 ]
+[v pad@buf buf `*.39uc  1 p 2 15 ]
+[v pad@p p `i  1 p 2 17 ]
+"226
 } 0
-"116
-[v _ADC_8to10 ADC_8to10 `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
 {
-"117
-[v ADC_8to10@adc_value adc_value `ui  1 a 2 4 ]
-"120
+"11
+[v fputs@i i `i  1 a 2 12 ]
+"10
+[v fputs@c c `uc  1 a 1 11 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 8 ]
+[u S1143 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1146 _IO_FILE 12 `S1143 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputs@fp fp `*.30S1146  1 p 1 10 ]
+"19
 } 0
-"130
-[v _Amplitude_Echantillonage Amplitude_Echantillonage `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
 {
-"131
-[v Amplitude_Echantillonage@valeur valeur `i  1 a 2 2 ]
-"138
+[v fputc@c c `i  1 p 2 0 ]
+[u S1143 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1146 _IO_FILE 12 `S1143 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.30S1146  1 p 1 2 ]
+"24
 } 0
-"168
+"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 6 ]
+"4
+} 0
+"163 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _print_Trigger print_Trigger `(v  1 e 1 0 ]
 {
-"169
-[v print_Trigger@V V `i  1 a 2 92 ]
-"168
-[v print_Trigger@value value `f  1 p 4 86 ]
-[v print_Trigger@k k `i  1 p 2 90 ]
-"175
+"164
+[v print_Trigger@Volt Volt `f  1 a 4 32 ]
+"165
+[v print_Trigger@new_value new_value `i  1 a 2 36 ]
+"163
+[v print_Trigger@value value `f  1 p 4 24 ]
+[v print_Trigger@k k `f  1 p 4 28 ]
+"171
 } 0
 "831 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\glcd.c
 [v _glcd_arrow glcd_arrow `(v  1 e 1 0 ]
 {
 [v glcd_arrow@posx posx `uc  1 a 1 wreg ]
 "846
-[v glcd_arrow@i_451 i `i  1 a 2 84 ]
+[v glcd_arrow@i_451 i `i  1 a 2 22 ]
 "843
-[v glcd_arrow@i_450 i `i  1 a 2 82 ]
+[v glcd_arrow@i_450 i `i  1 a 2 20 ]
 "838
-[v glcd_arrow@i_449 i `i  1 a 2 80 ]
+[v glcd_arrow@i_449 i `i  1 a 2 18 ]
 "835
-[v glcd_arrow@i i `i  1 a 2 78 ]
+[v glcd_arrow@i i `i  1 a 2 16 ]
 "831
 [v glcd_arrow@posx posx `uc  1 a 1 wreg ]
-[v glcd_arrow@posy posy `uc  1 p 1 74 ]
-[v glcd_arrow@xory xory `uc  1 p 1 75 ]
-[v glcd_arrow@color color `uc  1 p 1 76 ]
+[v glcd_arrow@posy posy `uc  1 p 1 12 ]
+[v glcd_arrow@xory xory `uc  1 p 1 13 ]
+[v glcd_arrow@color color `uc  1 p 1 14 ]
 "833
-[v glcd_arrow@posx posx `uc  1 a 1 77 ]
+[v glcd_arrow@posx posx `uc  1 a 1 15 ]
 "851
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 73 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 72 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 64 ]
-"70
 } 0
 "57 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _ADC_Interupt ADC_Interupt `(v  1 e 1 0 ]
 {
 "59
-[v ADC_Interupt@print_ADC print_ADC `i  1 a 2 80 ]
+[v ADC_Interupt@print_ADC print_ADC `i  1 a 2 26 ]
 "58
-[v ADC_Interupt@ADC_Value ADC_Value `i  1 a 2 78 ]
+[v ADC_Interupt@ADC_Value ADC_Value `i  1 a 2 24 ]
 "57
-[v ADC_Interupt@k k `i  1 p 2 76 ]
-"71
+[v ADC_Interupt@k k `f  1 p 4 20 ]
+"72
 } 0
-"73
+"43 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 93 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 92 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 88 ]
+"70
+} 0
+"245 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 0 ]
+[v ___flsub@a a `d  1 p 4 4 ]
+"250
+} 0
+"73 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _Stay_Value Stay_Value `(v  1 e 1 0 ]
 {
 "74
-[v Stay_Value@Volt_ADC Volt_ADC `f  1 a 4 72 ]
+[v Stay_Value@Volt_ADC Volt_ADC `f  1 a 4 16 ]
 "73
-[v Stay_Value@ADC_Value ADC_Value `i  1 p 2 64 ]
-[v Stay_Value@Vtriger Vtriger `f  1 p 4 66 ]
-[v Stay_Value@print_ADC print_ADC `i  1 p 2 70 ]
+[v Stay_Value@ADC_Value ADC_Value `i  1 p 2 8 ]
+[v Stay_Value@Vtriger Vtriger `f  1 p 4 10 ]
+[v Stay_Value@print_ADC print_ADC `i  1 p 2 14 ]
 "79
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\xxtofl.c
@@ -798,89 +1072,89 @@ F8X8 1
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[v ___xxtofl@arg arg `ul  1 a 4 18 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+[v ___xxtofl@exp exp `uc  1 a 1 17 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+[v ___xxtofl@val val `l  1 p 4 8 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 16 ]
 "44
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S998 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1008 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1003 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1006 . 4 `l 1 i 4 0 `d 1 f 4 0 `S998 1 fAsBytes 4 0 `S1003 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1006  1 a 4 58 ]
+[s S1013 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1016 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1008 1 fAsBytes 4 0 `S1013 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1016  1 a 4 66 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 52 ]
-[s S1074 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 60 ]
+[s S1084 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1077 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1074 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1077  1 a 2 62 ]
+[u S1087 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1084 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1087  1 a 2 70 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 57 ]
+[v ___flmul@bexp bexp `uc  1 a 1 65 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 56 ]
+[v ___flmul@aexp aexp `uc  1 a 1 64 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 51 ]
+[v ___flmul@sign sign `uc  1 a 1 59 ]
 "8
-[v ___flmul@b b `d  1 p 4 39 ]
-[v ___flmul@a a `d  1 p 4 43 ]
+[v ___flmul@b b `d  1 p 4 47 ]
+[v ___flmul@a a `d  1 p 4 51 ]
 "205
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
-[v ___flge@ff1 ff1 `d  1 p 4 16 ]
-[v ___flge@ff2 ff2 `d  1 p 4 20 ]
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
 "19
 } 0
 "11 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 33 ]
+[v ___fldiv@grs grs `ul  1 a 4 41 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 26 ]
+[v ___fldiv@rem rem `ul  1 a 4 34 ]
 "20
-[v ___fldiv@new_exp new_exp `s  1 a 2 31 ]
+[v ___fldiv@new_exp new_exp `s  1 a 2 39 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 38 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 46 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 37 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 45 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 30 ]
+[v ___fldiv@sign sign `uc  1 a 1 38 ]
 "11
-[v ___fldiv@b b `d  1 p 4 14 ]
-[v ___fldiv@a a `d  1 p 4 18 ]
+[v ___fldiv@b b `d  1 p 4 22 ]
+[v ___fldiv@a a `d  1 p 4 26 ]
 "185
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 15 ]
+[v ___fladd@grs grs `uc  1 a 1 87 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+[v ___fladd@bexp bexp `uc  1 a 1 86 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+[v ___fladd@aexp aexp `uc  1 a 1 85 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 12 ]
+[v ___fladd@signs signs `uc  1 a 1 84 ]
 "10
-[v ___fladd@b b `d  1 p 4 0 ]
-[v ___fladd@a a `d  1 p 4 4 ]
+[v ___fladd@b b `d  1 p 4 72 ]
+[v ___fladd@a a `d  1 p 4 76 ]
 "237
 } 0
 "80 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\oscilloscope.c
 [v _ADC_Recording ADC_Recording `(v  1 e 1 0 ]
 {
 [v ADC_Recording@print_point print_point `i  1 p 2 17 ]
-"102
+"103
 } 0
 "525 C:\Users\emile\Desktop\Cour\2_Cour_2024\1_S7\1_Micro_controleur\3_Projet\2_CODE\oxyloscope.X\glcd.c
 [v i2_glcd_PlotPixel glcd_PlotPixel `(v  1 e 1 0 ]

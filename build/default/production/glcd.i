@@ -5992,15 +5992,17 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
     void init_external_interupt();
     void print_oscylocope();
     void T0_Interupt( int val);
-    void ADC_Interupt(int k);
-    void external_interupt(int k);
+    void ADC_Interupt(float k);
+    void external_interupt(float k);
     void Frequence_Echantillonage(int *valeur);
-    int Amplitude_Echantillonage();
+    float Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
     void ADC_Recording(int print_point);
     void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
-    void print_Trigger(float value,int k);
+    void print_Trigger(float value,float k);
+    void print_Vmax(float A);
+    void print_Techantillonage(int time);
 # 15 "./main.h" 2
 # 16 "glcd.c" 2
 
@@ -6813,10 +6815,10 @@ void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned
     }
 }
 void caddrillage(){
-     glcd_line(30,0,0,51,1);
-     glcd_line(60,0,0,51,1);
-     glcd_line(90,0,0,51,1);
-     glcd_line(25,1,0,120,1);
+     glcd_line(30,0,13,63,1);
+     glcd_line(60,0,13,63,1);
+     glcd_line(90,0,13,63,1);
+     glcd_line(38,1,0,120,1);
 }
 void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color)
 {

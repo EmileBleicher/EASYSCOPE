@@ -14,15 +14,17 @@
     void init_external_interupt();
     void print_oscylocope();
     void T0_Interupt( int val);
-    void ADC_Interupt(int k);
-    void external_interupt(int k);
+    void ADC_Interupt(float k);
+    void external_interupt(float k);
     void Frequence_Echantillonage(int *valeur);
-    int Amplitude_Echantillonage();
+    float Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
     void ADC_Recording(int print_point);
     void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
-    void print_Trigger(float value,int k);
+    void print_Trigger(float value,float k);
+    void print_Vmax(float A);
+    void print_Techantillonage(int time);
 # 1 "oscilloscope.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
@@ -6067,9 +6069,10 @@ void T0_Interupt( int val){
     TMR0L = 134;
  TMR0IF = 0;
 }
-void ADC_Interupt(int k){
+void ADC_Interupt(float k){
     int ADC_Value=ADRESH;
-    int print_ADC=50-(ADC_Value/k);
+    int print_ADC=64-((ADC_Value/5)*k);
+
     if (Oscilo_Mode){
         if(Start_Single){
                ADC_Recording(print_ADC);
@@ -6082,7 +6085,6 @@ void ADC_Interupt(int k){
     }
     ADIF = 0;
 }
-
 void Stay_Value(int ADC_Value,float Vtriger,int print_ADC){
     float Volt_ADC=((float)ADC_Value/255.0)*5.0;
     if(((Vtriger-0.1)<Volt_ADC)&&((Vtriger+0.1)>Volt_ADC)){
@@ -6100,7 +6102,7 @@ void ADC_Recording(int print_point){
         GO_DONE=1;
 
     }
-        if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
+        if((enable==1) && (memo_GLCD[i]!=38)&& (i%30!=0)&&(memo_GLCD[i]!=63)&&(memo_GLCD[i]!=13)&&(memo_GLCD[i]>=13)){
             glcd_PlotPixel(i,memo_GLCD[i] , 0);
         }
 
@@ -6110,16 +6112,11 @@ void ADC_Recording(int print_point){
             }
         }
         memo_GLCD[i]=print_point;
-        glcd_PlotPixel(i,print_point , 1);
+        if((print_point>13))
+            glcd_PlotPixel(i,print_point , 1);
         i++;
 }
-void reset_recording(){
-    for (int y=0;y<120;y++){
-        if((enable==1) && (memo_GLCD[i]!=25)&& (i%30!=0)&&(memo_GLCD[i]!=0)){
-            glcd_PlotPixel(i,memo_GLCD[i] , 0);
-        }
-    }
-}
+
 void debug (int n,int val){
     char debug[10];
     sprintf(&debug,"%d=%d",n,val);
@@ -6134,32 +6131,32 @@ int ADC_8to10(){
 void Frequence_Echantillonage(int *valeur){
     static int ok=0;
     ok++;
-    *valeur=ADC_8to10();
+    *valeur=ADRESH;
+    print_Techantillonage(*valeur);
     CHS0=0;
     CHS1=1;
     ADIF = 0;
     GO_DONE=1;
 }
-int Amplitude_Echantillonage(){
-    int valeur=ADRESH/28;
-    valeur++;
+float Amplitude_Echantillonage(){
+    float valeur=ADRESH/255.0;
+    valeur=valeur*2;
+    print_Vmax(valeur);
     ADIF = 0;
     CHS1=0;
     CHS0=0;
     print_Trigger(Trigger, valeur);
+
     return valeur;
 }
-void external_interupt(int k){
+void external_interupt(float k){
     if((PORTBbits.RB6==0)&&(PORTBbits.RB7==1)){
         Oscilo_Mode=~Oscilo_Mode;
         if(Oscilo_Mode){
-            glcd_PlotPixel(6, 61, 0);
-            glcd_text_write("S", 10, 1, 15,F3X6);
-            reset_recording();
+            glcd_text_write("S", 10, 6, 0,0);
         }
         else{
-            glcd_PlotPixel(6, 61, 0);
-            glcd_text_write("R", 10, 1, 15,F3X6);
+            glcd_text_write("R", 10, 6, 0,0);
         }
 
     }
@@ -6178,28 +6175,30 @@ void external_interupt(int k){
     }
     RBIF=0;
 }
-void print_Trigger(float value,int k){
-    int V;
-    V=(value/5.0)*255;
-    V=50-(V/k);
+void print_Trigger(float value,float k){
+    float Volt;
+    int new_value;
+    Volt=(value/5.0)*255;
+    new_value=63-((Volt/5)*k);;
     glcd_arrow(memo_trigger,124,0,0);
-    memo_trigger=V;
-    glcd_arrow(V,124,0,1);
+    memo_trigger=new_value;
+    glcd_arrow(new_value,124,0,1);
 }
 void print_oscylocope(){
         caddrillage();
-        glcd_Rect(0, 0, 121, 51, 1);
-        glcd_PlotPixel(0, 61, 0);
-        glcd_text_write("M:", 10, 1, 60,F3X6);
-        glcd_PlotPixel(6, 61, 0);
-        glcd_text_write("R", 10, 1, 15,F3X6);
-        glcd_PlotPixel(12, 61, 0);
-        glcd_text_write("A:", 10, 1, 60,F3X6);
-        glcd_PlotPixel(18, 61, 0);
-        glcd_text_write("5", 10, 1, 15,F3X6);
-        glcd_PlotPixel(24, 61, 0);
-        glcd_WriteString_2("TE:",0,1);
-        glcd_PlotPixel(32, 61, 0);
-        glcd_WriteString_2("10",0,1);
-
+        glcd_Rect(0, 13, 123, 63, 1);
+        glcd_text_write("M:R", 10, 0, 0,0);
+        glcd_text_write("A:5", 10, 12, 0,0);
+}
+void print_Vmax(float A){
+    char affichage[10];
+    A=5*A;
+    sprintf(&affichage,"A:%.1fV",A);
+    glcd_text_write(affichage, 10, 12, 0,0);
+}
+void print_Techantillonage(int time){
+    char affichage[10];
+    float A=0.5*(float)time+1.0;
+    sprintf(&affichage," T:%.1f ",A);
+    glcd_text_write(affichage, 10, 30, 0,0);
 }

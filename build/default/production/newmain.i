@@ -6006,15 +6006,17 @@ void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char col
     void init_external_interupt();
     void print_oscylocope();
     void T0_Interupt( int val);
-    void ADC_Interupt(int k);
-    void external_interupt(int k);
+    void ADC_Interupt(float k);
+    void external_interupt(float k);
     void Frequence_Echantillonage(int *valeur);
-    int Amplitude_Echantillonage();
+    float Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
     void ADC_Recording(int print_point);
     void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
-    void print_Trigger(float value,int k);
+    void print_Trigger(float value,float k);
+    void print_Vmax(float A);
+    void print_Techantillonage(int time);
 # 15 "./main.h" 2
 # 8 "newmain.c" 2
 
@@ -6024,16 +6026,16 @@ void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char col
 #pragma config DEBUG = OFF
 
 int val=18;
-int Amp=5;
+float Amp=1;
 
 void __attribute__((picinterrupt(("")))) ISR() {
     if (PIR1bits.ADIF && CHS0==0 && CHS1==0) {
         ADC_Interupt(Amp);}
-    if (PIR1bits.ADIF && CHS0==1) {
+    if (PIR1bits.ADIF && CHS0==1 && CHS1==0) {
         Frequence_Echantillonage(&val);}
-    if (PIR1bits.ADIF && CHS1==1){
+    if (PIR1bits.ADIF && CHS0==0 && CHS1==1){
        Amp=Amplitude_Echantillonage();}
-    if(INTCONbits.TMR0IF ){
+    if(INTCONbits.TMR0IF){
   T0_Interupt(val); }
     if(RBIF==1){
         external_interupt(Amp);}
