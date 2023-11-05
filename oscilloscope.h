@@ -13,14 +13,16 @@
     void init_external_interupt();
     void print_oscylocope();
     void T0_Interupt( int val);
-    void ADC_Interupt(int k);
-    void external_interupt(int k);
+    void ADC_Interupt(float k);
+    void external_interupt(float k);
     void Frequence_Echantillonage(int *valeur);
-    int Amplitude_Echantillonage();
+    float Amplitude_Echantillonage();
     int ADC_8to10();
     void debug (int n,int val);
     void ADC_Recording(int print_point);
     void Stay_Value(int ADC_Value,float Vtriger,int print_ADC);
-    void print_Trigger(float value,int k);
+    void print_Trigger(float value,float k);
+    void print_Vmax(float A);
+    void print_Techantillonage(int time);
 #endif	/* OSCILLOSCOPE_H */
 
