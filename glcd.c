@@ -823,10 +823,10 @@ void glcd_line(unsigned char pos,unsigned char xory,unsigned char start,unsigned
     }
 }
 void caddrillage(){
-     glcd_line(30,0,0,51,1);
-     glcd_line(60,0,0,51,1);
-     glcd_line(90,0,0,51,1);
-     glcd_line(25,1,0,120,1);  
+     glcd_line(30,0,13,63,1);
+     glcd_line(60,0,13,63,1);
+     glcd_line(90,0,13,63,1);
+     glcd_line(38,1,0,120,1);  
 }
 void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color)
 {	
