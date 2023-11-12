@@ -11,6 +11,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9873
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 9873: extern volatile __bit INTEDG0 __attribute__((address(0x7F8E)));
 [v _INTEDG0 `Vb ~T0 @X0 0 e@32654 ]
+"3427
+[; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3427: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "4001
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4001: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
@@ -111,23 +114,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9123
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 9123: extern volatile __bit CHS1 __attribute__((address(0x7E13)));
 [v _CHS1 `Vb ~T0 @X0 0 e@32275 ]
-"91 oscilloscope.c
-[; ;oscilloscope.c: 91:             glcd_PlotPixel(i,memo_GLCD[i] , 0);
-[c E3576 0 1 .. ]
-[n E3576 . GLCD_BLUE GLCD_WHITE  ]
+"92 oscilloscope.c
+[; ;oscilloscope.c: 92:             glcd_PlotPixel(i,memo_GLCD[i] , 0);
+[c E3577 0 1 .. ]
+[n E3577 . GLCD_BLUE GLCD_WHITE  ]
 "110 ./glcd.h
 [; ;./glcd.h: 110: void glcd_PlotPixel(uint8_t x, uint8_t y, glcd_color_t color);
-[v _glcd_PlotPixel `(v ~T0 @X0 0 ef3`uc`uc`E3576 ]
+[v _glcd_PlotPixel `(v ~T0 @X0 0 ef3`uc`uc`E3577 ]
 "121 C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"108 oscilloscope.c
-[; ;oscilloscope.c: 108:     glcd_text_write("          ", 10,1,10*n,0);
-[c E3572 0 1 .. ]
-[n E3572 . F3X6 F8X8  ]
+"109 oscilloscope.c
+[; ;oscilloscope.c: 109:     glcd_text_write("          ", 10,1,10*n,0);
+[c E3573 0 1 .. ]
+[n E3573 . F3X6 F8X8  ]
 "172 ./glcd.h
 [; ;./glcd.h: 172: void glcd_text_write(const char str[], uint8_t len, uint8_t x, uint8_t y,glcd_font_t font);
-[v _glcd_text_write `(v ~T0 @X0 0 ef5`*Cuc`uc`uc`uc`E3572 ]
+[v _glcd_text_write `(v ~T0 @X0 0 ef5`*Cuc`uc`uc`uc`E3573 ]
 "6792 D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6792: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
@@ -167,7 +170,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _caddrillage `(v ~T0 @X0 0 e? ]
 "129
 [; ;./glcd.h: 129: void glcd_Rect(uint8_t xs, uint8_t ys, uint8_t xe, uint8_t ye, glcd_color_t color);
-[v _glcd_Rect `(v ~T0 @X0 0 ef5`uc`uc`uc`uc`E3576 ]
+[v _glcd_Rect `(v ~T0 @X0 0 ef5`uc`uc`uc`uc`E3577 ]
+"190 oscilloscope.c
+[; ;oscilloscope.c: 190:     glcd_Init(GLCD_ON);
+[c E3565 0 1 .. ]
+[n E3565 . GLCD_OFF GLCD_ON  ]
+"85 ./glcd.h
+[; ;./glcd.h: 85: void glcd_Init(glcd_mode_t mode);
+[v _glcd_Init `(v ~T0 @X0 0 ef1`E3565 ]
+"174
+[; ;./glcd.h: 174: void glcd_Image();
+[v _glcd_Image `(v ~T0 @X0 0 e? ]
+[v F3204 `(v ~T0 @X0 1 tf1`ul ]
+"203 D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
+[v __delay `JF3204 ~T0 @X0 0 e ]
+[p i __delay ]
+"136 ./glcd.h
+[; ;./glcd.h: 136: void glcd_FillScreen(glcd_color_t color);
+[v _glcd_FillScreen `(v ~T0 @X0 0 ef1`E3577 ]
 "54 D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/uc/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -746,194 +766,197 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _init_ADC ]
 [f ]
 "20
-[; ;oscilloscope.c: 20:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 20:     TRISA=255;
+[e = _TRISA -> -> 255 `i `uc ]
 "21
-[; ;oscilloscope.c: 21:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 21:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
 "22
-[; ;oscilloscope.c: 22:      TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 22:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
 "23
-[; ;oscilloscope.c: 23:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 23:      TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
 "24
-[; ;oscilloscope.c: 24:     ADCON1 = 0;
-[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 24:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
 "25
-[; ;oscilloscope.c: 25:     ADCON0 = 0;
-[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 25:     ADCON1 = 0;
+[e = _ADCON1 -> -> 0 `i `uc ]
 "26
-[; ;oscilloscope.c: 26:     ADIE = 1;
-[e = _ADIE -> -> 1 `i `b ]
+[; ;oscilloscope.c: 26:     ADCON0 = 0;
+[e = _ADCON0 -> -> 0 `i `uc ]
 "27
-[; ;oscilloscope.c: 27:     ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
+[; ;oscilloscope.c: 27:     ADIE = 1;
+[e = _ADIE -> -> 1 `i `b ]
 "28
-[; ;oscilloscope.c: 28:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
+[; ;oscilloscope.c: 28:     ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
 "29
-[; ;oscilloscope.c: 29:     PEIE = 1;
-[e = _PEIE -> -> 1 `i `b ]
+[; ;oscilloscope.c: 29:     GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
 "30
-[; ;oscilloscope.c: 30:     ADON = 1;
-[e = _ADON -> -> 1 `i `b ]
+[; ;oscilloscope.c: 30:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
 "31
-[; ;oscilloscope.c: 31: }
+[; ;oscilloscope.c: 31:     ADON = 1;
+[e = _ADON -> -> 1 `i `b ]
+"32
+[; ;oscilloscope.c: 32: }
 [e :UE 370 ]
 }
-"32
-[; ;oscilloscope.c: 32: void InitTimer0(unsigned char Hb, unsigned char Lb){
+"33
+[; ;oscilloscope.c: 33: void InitTimer0(unsigned char Hb, unsigned char Lb){
 [v _InitTimer0 `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _InitTimer0 ]
 [v _Hb `uc ~T0 @X0 1 r1 ]
 [v _Lb `uc ~T0 @X0 1 r2 ]
 [f ]
-"34
-[; ;oscilloscope.c: 34:     T0CON = 10;
-[e = _T0CON -> -> 10 `i `uc ]
 "35
-[; ;oscilloscope.c: 35:     TMR0H=252;
-[e = _TMR0H -> -> 252 `i `uc ]
+[; ;oscilloscope.c: 35:     T0CON = 10;
+[e = _T0CON -> -> 10 `i `uc ]
 "36
-[; ;oscilloscope.c: 36:  TMR0L=134;
-[e = _TMR0L -> -> 134 `i `uc ]
+[; ;oscilloscope.c: 36:     TMR0H=252;
+[e = _TMR0H -> -> 252 `i `uc ]
 "37
-[; ;oscilloscope.c: 37:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
+[; ;oscilloscope.c: 37:  TMR0L=134;
+[e = _TMR0L -> -> 134 `i `uc ]
 "38
-[; ;oscilloscope.c: 38:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;oscilloscope.c: 38:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
 "39
-[; ;oscilloscope.c: 39:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 39:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "40
-[; ;oscilloscope.c: 40:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 40:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "41
-[; ;oscilloscope.c: 41:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 41:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "42
-[; ;oscilloscope.c: 42:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 42:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "43
-[; ;oscilloscope.c: 43: }
+[; ;oscilloscope.c: 43:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"44
+[; ;oscilloscope.c: 44: }
 [e :UE 371 ]
 }
-"44
-[; ;oscilloscope.c: 44: void T0_Interupt( int val){
+"45
+[; ;oscilloscope.c: 45: void T0_Interupt( int val){
 [v _T0_Interupt `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _T0_Interupt ]
 [v _val `i ~T0 @X0 1 r1 ]
 [f ]
-"45
-[; ;oscilloscope.c: 45:     static int z=0;
-[v F3650 `i ~T0 @X0 1 s z ]
-[i F3650
+"46
+[; ;oscilloscope.c: 46:     static int z=0;
+[v F3673 `i ~T0 @X0 1 s z ]
+[i F3673
 -> 0 `i
 ]
-"46
-[; ;oscilloscope.c: 46:     if(val<=z){
-[e $ ! <= _val F3650 373  ]
-{
 "47
-[; ;oscilloscope.c: 47:         GO_DONE=1;
-[e = _GO_DONE -> -> 1 `i `b ]
+[; ;oscilloscope.c: 47:     if(val<=z){
+[e $ ! <= _val F3673 373  ]
+{
 "48
-[; ;oscilloscope.c: 48:         z=0;
-[e = F3650 -> 0 `i ]
-"50
-[; ;oscilloscope.c: 50:     }
+[; ;oscilloscope.c: 48:         GO_DONE=1;
+[e = _GO_DONE -> -> 1 `i `b ]
+"49
+[; ;oscilloscope.c: 49:         z=0;
+[e = F3673 -> 0 `i ]
+"51
+[; ;oscilloscope.c: 51:     }
 }
 [e $U 374  ]
-"51
-[; ;oscilloscope.c: 51:     else{
+"52
+[; ;oscilloscope.c: 52:     else{
 [e :U 373 ]
 {
-"52
-[; ;oscilloscope.c: 52:         z++;}
-[e ++ F3650 -> 1 `i ]
+"53
+[; ;oscilloscope.c: 53:         z++;}
+[e ++ F3673 -> 1 `i ]
 }
 [e :U 374 ]
-"53
-[; ;oscilloscope.c: 53:  TMR0H = 252;
-[e = _TMR0H -> -> 252 `i `uc ]
 "54
-[; ;oscilloscope.c: 54:     TMR0L = 134;
-[e = _TMR0L -> -> 134 `i `uc ]
+[; ;oscilloscope.c: 54:  TMR0H = 252;
+[e = _TMR0H -> -> 252 `i `uc ]
 "55
-[; ;oscilloscope.c: 55:  TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
+[; ;oscilloscope.c: 55:     TMR0L = 134;
+[e = _TMR0L -> -> 134 `i `uc ]
 "56
-[; ;oscilloscope.c: 56: }
+[; ;oscilloscope.c: 56:  TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"57
+[; ;oscilloscope.c: 57: }
 [e :UE 372 ]
 }
-"57
-[; ;oscilloscope.c: 57: void ADC_Interupt(float k){
+"58
+[; ;oscilloscope.c: 58: void ADC_Interupt(float k){
 [v _ADC_Interupt `(v ~T0 @X0 1 ef1`f ]
 {
 [e :U _ADC_Interupt ]
 [v _k `f ~T0 @X0 1 r1 ]
 [f ]
-"58
-[; ;oscilloscope.c: 58:     int ADC_Value=ADRESH;
+"59
+[; ;oscilloscope.c: 59:     int ADC_Value=ADRESH;
 [v _ADC_Value `i ~T0 @X0 1 a ]
 [e = _ADC_Value -> _ADRESH `i ]
-"59
-[; ;oscilloscope.c: 59:     int print_ADC=64-((ADC_Value/5)*k);
+"60
+[; ;oscilloscope.c: 60:     int print_ADC=63-((ADC_Value/5)*k);
 [v _print_ADC `i ~T0 @X0 1 a ]
-[e = _print_ADC -> - -> -> 64 `i `f * -> / _ADC_Value -> 5 `i `f _k `i ]
-"61
-[; ;oscilloscope.c: 61:     if (Oscilo_Mode){
+[e = _print_ADC -> - -> -> 63 `i `f * -> / _ADC_Value -> 5 `i `f _k `i ]
+"62
+[; ;oscilloscope.c: 62:     if (Oscilo_Mode){
 [e $ ! != -> _Oscilo_Mode `i -> 0 `i 376  ]
 {
-"62
-[; ;oscilloscope.c: 62:         if(Start_Single){
+"63
+[; ;oscilloscope.c: 63:         if(Start_Single){
 [e $ ! != -> _Start_Single `i -> 0 `i 377  ]
 {
-"63
-[; ;oscilloscope.c: 63:                ADC_Recording(print_ADC);
-[e ( _ADC_Recording (1 _print_ADC ]
 "64
-[; ;oscilloscope.c: 64:         }else{
+[; ;oscilloscope.c: 64:                ADC_Recording(print_ADC);
+[e ( _ADC_Recording (1 _print_ADC ]
+"65
+[; ;oscilloscope.c: 65:         }else{
 }
 [e $U 378  ]
 [e :U 377 ]
 {
-"65
-[; ;oscilloscope.c: 65:             i=0;
-[e = _i -> -> 0 `i `uc ]
 "66
-[; ;oscilloscope.c: 66:             Stay_Value(ADC_Value,Trigger,print_ADC);
-[e ( _Stay_Value (3 , , _ADC_Value _Trigger _print_ADC ]
+[; ;oscilloscope.c: 66:             i=0;
+[e = _i -> -> 0 `i `uc ]
 "67
-[; ;oscilloscope.c: 67:         }
+[; ;oscilloscope.c: 67:             Stay_Value(ADC_Value,Trigger,print_ADC);
+[e ( _Stay_Value (3 , , _ADC_Value _Trigger _print_ADC ]
+"68
+[; ;oscilloscope.c: 68:         }
 }
 [e :U 378 ]
-"68
-[; ;oscilloscope.c: 68:     }else{
+"69
+[; ;oscilloscope.c: 69:     }else{
 }
 [e $U 379  ]
 [e :U 376 ]
 {
-"69
-[; ;oscilloscope.c: 69:         ADC_Recording(print_ADC);
-[e ( _ADC_Recording (1 _print_ADC ]
 "70
-[; ;oscilloscope.c: 70:     }
+[; ;oscilloscope.c: 70:         ADC_Recording(print_ADC);
+[e ( _ADC_Recording (1 _print_ADC ]
+"71
+[; ;oscilloscope.c: 71:     }
 }
 [e :U 379 ]
-"71
-[; ;oscilloscope.c: 71:     ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
 "72
-[; ;oscilloscope.c: 72: }
+[; ;oscilloscope.c: 72:     ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
+"73
+[; ;oscilloscope.c: 73: }
 [e :UE 375 ]
 }
-"73
-[; ;oscilloscope.c: 73: void Stay_Value(int ADC_Value,float Vtriger,int print_ADC){
+"74
+[; ;oscilloscope.c: 74: void Stay_Value(int ADC_Value,float Vtriger,int print_ADC){
 [v _Stay_Value `(v ~T0 @X0 1 ef3`i`f`i ]
 {
 [e :U _Stay_Value ]
@@ -941,416 +964,446 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _Vtriger `f ~T0 @X0 1 r2 ]
 [v _print_ADC `i ~T0 @X0 1 r3 ]
 [f ]
-"74
-[; ;oscilloscope.c: 74:     float Volt_ADC=((float)ADC_Value/255.0)*5.0;
+"75
+[; ;oscilloscope.c: 75:     float Volt_ADC=((float)ADC_Value/255.0)*5.0;
 [v _Volt_ADC `f ~T0 @X0 1 a ]
 [e = _Volt_ADC -> * / -> -> _ADC_Value `f `d .255.0 .5.0 `f ]
-"75
-[; ;oscilloscope.c: 75:     if(((Vtriger-0.1)<Volt_ADC)&&((Vtriger+0.1)>Volt_ADC)){
+"76
+[; ;oscilloscope.c: 76:     if(((Vtriger-0.1)<Volt_ADC)&&((Vtriger+0.1)>Volt_ADC)){
 [e $ ! && < - -> _Vtriger `d .0.1 -> _Volt_ADC `d > + -> _Vtriger `d .0.1 -> _Volt_ADC `d 381  ]
 {
-"76
-[; ;oscilloscope.c: 76:          Start_Single=1;
-[e = _Start_Single -> -> 1 `i `a ]
 "77
-[; ;oscilloscope.c: 77:          ADC_Recording(print_ADC);
-[e ( _ADC_Recording (1 _print_ADC ]
+[; ;oscilloscope.c: 77:          Start_Single=1;
+[e = _Start_Single -> -> 1 `i `a ]
 "78
-[; ;oscilloscope.c: 78:     }
+[; ;oscilloscope.c: 78:          ADC_Recording(print_ADC);
+[e ( _ADC_Recording (1 _print_ADC ]
+"79
+[; ;oscilloscope.c: 79:     }
 }
 [e :U 381 ]
-"79
-[; ;oscilloscope.c: 79: }
+"80
+[; ;oscilloscope.c: 80: }
 [e :UE 380 ]
 }
-"80
-[; ;oscilloscope.c: 80: void ADC_Recording(int print_point){
+"81
+[; ;oscilloscope.c: 81: void ADC_Recording(int print_point){
 [v _ADC_Recording `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _ADC_Recording ]
 [v _print_point `i ~T0 @X0 1 r1 ]
 [f ]
-"81
-[; ;oscilloscope.c: 81:     if((i>120)){
+"82
+[; ;oscilloscope.c: 82:     if((i>120)){
 [e $ ! > -> _i `i -> 120 `i 383  ]
 {
-"82
-[; ;oscilloscope.c: 82:         i=0;
-[e = _i -> -> 0 `i `uc ]
 "83
-[; ;oscilloscope.c: 83:         enable=1;
-[e = _enable -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 83:         i=0;
+[e = _i -> -> 0 `i `uc ]
 "84
-[; ;oscilloscope.c: 84:         Start_Single=0;
-[e = _Start_Single -> -> 0 `i `a ]
+[; ;oscilloscope.c: 84:         enable=1;
+[e = _enable -> -> 1 `i `uc ]
 "85
-[; ;oscilloscope.c: 85:         CHS0=1;
-[e = _CHS0 -> -> 1 `i `b ]
+[; ;oscilloscope.c: 85:         Start_Single=0;
+[e = _Start_Single -> -> 0 `i `a ]
 "86
-[; ;oscilloscope.c: 86:         CHS1=0;
-[e = _CHS1 -> -> 0 `i `b ]
+[; ;oscilloscope.c: 86:         CHS0=1;
+[e = _CHS0 -> -> 1 `i `b ]
 "87
-[; ;oscilloscope.c: 87:         GO_DONE=1;
+[; ;oscilloscope.c: 87:         CHS1=0;
+[e = _CHS1 -> -> 0 `i `b ]
+"88
+[; ;oscilloscope.c: 88:         GO_DONE=1;
 [e = _GO_DONE -> -> 1 `i `b ]
-"89
-[; ;oscilloscope.c: 89:     }
+"90
+[; ;oscilloscope.c: 90:     }
 }
 [e :U 383 ]
-"90
-[; ;oscilloscope.c: 90:         if((enable==1) && (memo_GLCD[i]!=38)&& (i%30!=0)&&(memo_GLCD[i]!=63)&&(memo_GLCD[i]!=13)&&(memo_GLCD[i]>=13)){
+"91
+[; ;oscilloscope.c: 91:         if((enable==1) && (memo_GLCD[i]!=38)&& (i%30!=0)&&(memo_GLCD[i]!=63)&&(memo_GLCD[i]!=13)&&(memo_GLCD[i]>=13)){
 [e $ ! && && && && && == -> _enable `i -> 1 `i != -> *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux `i -> 38 `i != % -> _i `i -> 30 `i -> 0 `i != -> *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux `i -> 63 `i != -> *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux `i -> 13 `i >= -> *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux `i -> 13 `i 384  ]
 {
-"91
-[; ;oscilloscope.c: 91:             glcd_PlotPixel(i,memo_GLCD[i] , 0);
-[e ( _glcd_PlotPixel (3 , , _i *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux -> -> 0 `i `E3576 ]
 "92
-[; ;oscilloscope.c: 92:         }
+[; ;oscilloscope.c: 92:             glcd_PlotPixel(i,memo_GLCD[i] , 0);
+[e ( _glcd_PlotPixel (3 , , _i *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux -> -> 0 `i `E3577 ]
+"93
+[; ;oscilloscope.c: 93:         }
 }
 [e :U 384 ]
-"94
-[; ;oscilloscope.c: 94:         if((i>1)&&(Oscilo_Mode==1)){
+"95
+[; ;oscilloscope.c: 95:         if((i>1)&&(Oscilo_Mode==1)){
 [e $ ! && > -> _i `i -> 1 `i == -> _Oscilo_Mode `i -> 1 `i 385  ]
 {
-"95
-[; ;oscilloscope.c: 95:             if(memo_GLCD[0]<memo_GLCD[1]){
+"96
+[; ;oscilloscope.c: 96:             if(memo_GLCD[0]<memo_GLCD[1]){
 [e $ ! < -> *U + &U _memo_GLCD * -> -> -> 0 `i `ui `ux -> -> # *U &U _memo_GLCD `ui `ux `i -> *U + &U _memo_GLCD * -> -> -> 1 `i `ui `ux -> -> # *U &U _memo_GLCD `ui `ux `i 386  ]
 {
-"96
-[; ;oscilloscope.c: 96:                 Start_Single=0;
-[e = _Start_Single -> -> 0 `i `a ]
 "97
-[; ;oscilloscope.c: 97:             }
+[; ;oscilloscope.c: 97:                 Start_Single=0;
+[e = _Start_Single -> -> 0 `i `a ]
+"98
+[; ;oscilloscope.c: 98:             }
 }
 [e :U 386 ]
-"98
-[; ;oscilloscope.c: 98:         }
+"99
+[; ;oscilloscope.c: 99:         }
 }
 [e :U 385 ]
-"99
-[; ;oscilloscope.c: 99:         memo_GLCD[i]=print_point;
-[e = *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux -> _print_point `uc ]
 "100
-[; ;oscilloscope.c: 100:         if((print_point>13))
-[e $ ! > _print_point -> 13 `i 387  ]
+[; ;oscilloscope.c: 100:         memo_GLCD[i]=print_point;
+[e = *U + &U _memo_GLCD * -> _i `ux -> -> # *U &U _memo_GLCD `ui `ux -> _print_point `uc ]
 "101
-[; ;oscilloscope.c: 101:             glcd_PlotPixel(i,print_point , 1);
-[e ( _glcd_PlotPixel (3 , , _i -> _print_point `uc -> -> 1 `i `E3576 ]
-[e :U 387 ]
+[; ;oscilloscope.c: 101:         if((print_point>13))
+[e $ ! > _print_point -> 13 `i 387  ]
 "102
-[; ;oscilloscope.c: 102:         i++;
-[e ++ _i -> -> 1 `i `uc ]
+[; ;oscilloscope.c: 102:             glcd_PlotPixel(i,print_point , 1);
+[e ( _glcd_PlotPixel (3 , , _i -> _print_point `uc -> -> 1 `i `E3577 ]
+[e :U 387 ]
 "103
-[; ;oscilloscope.c: 103: }
+[; ;oscilloscope.c: 103:         i++;
+[e ++ _i -> -> 1 `i `uc ]
+"104
+[; ;oscilloscope.c: 104: }
 [e :UE 382 ]
 }
-"105
-[; ;oscilloscope.c: 105: void debug (int n,int val){
+"106
+[; ;oscilloscope.c: 106: void debug (int n,int val){
 [v _debug `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _debug ]
 [v _n `i ~T0 @X0 1 r1 ]
 [v _val `i ~T0 @X0 1 r2 ]
 [f ]
-"106
-[; ;oscilloscope.c: 106:     char debug[10];
-[v _debug `uc ~T0 @X0 -> 10 `i a ]
 "107
-[; ;oscilloscope.c: 107:     sprintf(&debug,"%d=%d",n,val);
-[e ( _sprintf (1 , , (. , -> &U _debug `*uc :s 1C _n _val ]
+[; ;oscilloscope.c: 107:     char debug[10];
+[v _debug `uc ~T0 @X0 -> 10 `i a ]
 "108
-[; ;oscilloscope.c: 108:     glcd_text_write("          ", 10,1,10*n,0);
-[e ( _glcd_text_write (4 , , , , :s 2C -> -> 10 `i `uc -> -> 1 `i `uc -> * -> 10 `i _n `uc -> -> 0 `i `E3572 ]
+[; ;oscilloscope.c: 108:     sprintf(&debug,"%d=%d",n,val);
+[e ( _sprintf (1 , , (. , -> &U _debug `*uc :s 1C _n _val ]
 "109
-[; ;oscilloscope.c: 109:     glcd_text_write(debug, 10, 1, 10*n,0);
-[e ( _glcd_text_write (4 , , , , -> &U _debug `*Cuc -> -> 10 `i `uc -> -> 1 `i `uc -> * -> 10 `i _n `uc -> -> 0 `i `E3572 ]
+[; ;oscilloscope.c: 109:     glcd_text_write("          ", 10,1,10*n,0);
+[e ( _glcd_text_write (4 , , , , :s 2C -> -> 10 `i `uc -> -> 1 `i `uc -> * -> 10 `i _n `uc -> -> 0 `i `E3573 ]
 "110
-[; ;oscilloscope.c: 110: }
+[; ;oscilloscope.c: 110:     glcd_text_write(debug, 10, 1, 10*n,0);
+[e ( _glcd_text_write (4 , , , , -> &U _debug `*Cuc -> -> 10 `i `uc -> -> 1 `i `uc -> * -> 10 `i _n `uc -> -> 0 `i `E3573 ]
+"111
+[; ;oscilloscope.c: 111: }
 [e :UE 388 ]
 }
-"111
-[; ;oscilloscope.c: 111: int ADC_8to10(){
+"112
+[; ;oscilloscope.c: 112: int ADC_8to10(){
 [v _ADC_8to10 `(i ~T0 @X0 1 ef ]
 {
 [e :U _ADC_8to10 ]
 [f ]
-"112
-[; ;oscilloscope.c: 112:     unsigned int adc_value;
-[v _adc_value `ui ~T0 @X0 1 a ]
 "113
-[; ;oscilloscope.c: 113:     adc_value = (ADRESH << 2) | ADRESL;
-[e = _adc_value -> | << -> _ADRESH `i -> 2 `i -> _ADRESL `i `ui ]
+[; ;oscilloscope.c: 113:     unsigned int adc_value;
+[v _adc_value `ui ~T0 @X0 1 a ]
 "114
-[; ;oscilloscope.c: 114:     return adc_value;
+[; ;oscilloscope.c: 114:     adc_value = (ADRESH << 2) | ADRESL;
+[e = _adc_value -> | << -> _ADRESH `i -> 2 `i -> _ADRESL `i `ui ]
+"115
+[; ;oscilloscope.c: 115:     return adc_value;
 [e ) -> _adc_value `i ]
 [e $UE 389  ]
-"115
-[; ;oscilloscope.c: 115: }
+"116
+[; ;oscilloscope.c: 116: }
 [e :UE 389 ]
 }
-"116
-[; ;oscilloscope.c: 116: void Frequence_Echantillonage(int *valeur){
+"117
+[; ;oscilloscope.c: 117: void Frequence_Echantillonage(int *valeur){
 [v _Frequence_Echantillonage `(v ~T0 @X0 1 ef1`*i ]
 {
 [e :U _Frequence_Echantillonage ]
 [v _valeur `*i ~T0 @X0 1 r1 ]
 [f ]
-"117
-[; ;oscilloscope.c: 117:     static int ok=0;
-[v F3671 `i ~T0 @X0 1 s ok ]
-[i F3671
+"118
+[; ;oscilloscope.c: 118:     static int ok=0;
+[v F3694 `i ~T0 @X0 1 s ok ]
+[i F3694
 -> 0 `i
 ]
-"118
-[; ;oscilloscope.c: 118:     ok++;
-[e ++ F3671 -> 1 `i ]
 "119
-[; ;oscilloscope.c: 119:     *valeur=ADRESH;
-[e = *U _valeur -> _ADRESH `i ]
+[; ;oscilloscope.c: 119:     ok++;
+[e ++ F3694 -> 1 `i ]
 "120
-[; ;oscilloscope.c: 120:     print_Techantillonage(*valeur);
-[e ( _print_Techantillonage (1 *U _valeur ]
+[; ;oscilloscope.c: 120:     *valeur=ADRESH;
+[e = *U _valeur -> _ADRESH `i ]
 "121
-[; ;oscilloscope.c: 121:     CHS0=0;
-[e = _CHS0 -> -> 0 `i `b ]
+[; ;oscilloscope.c: 121:     print_Techantillonage(*valeur);
+[e ( _print_Techantillonage (1 *U _valeur ]
 "122
-[; ;oscilloscope.c: 122:     CHS1=1;
-[e = _CHS1 -> -> 1 `i `b ]
+[; ;oscilloscope.c: 122:     CHS0=0;
+[e = _CHS0 -> -> 0 `i `b ]
 "123
-[; ;oscilloscope.c: 123:     ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
+[; ;oscilloscope.c: 123:     CHS1=1;
+[e = _CHS1 -> -> 1 `i `b ]
 "124
-[; ;oscilloscope.c: 124:     GO_DONE=1;
-[e = _GO_DONE -> -> 1 `i `b ]
+[; ;oscilloscope.c: 124:     ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
 "125
-[; ;oscilloscope.c: 125: }
+[; ;oscilloscope.c: 125:     GO_DONE=1;
+[e = _GO_DONE -> -> 1 `i `b ]
+"126
+[; ;oscilloscope.c: 126: }
 [e :UE 390 ]
 }
-"126
-[; ;oscilloscope.c: 126: float Amplitude_Echantillonage(){
+"127
+[; ;oscilloscope.c: 127: float Amplitude_Echantillonage(){
 [v _Amplitude_Echantillonage `(f ~T0 @X0 1 ef ]
 {
 [e :U _Amplitude_Echantillonage ]
 [f ]
-"127
-[; ;oscilloscope.c: 127:     float valeur=ADRESH/255.0;
+"128
+[; ;oscilloscope.c: 128:     float valeur=ADRESH/255.0;
 [v _valeur `f ~T0 @X0 1 a ]
 [e = _valeur -> / -> -> _ADRESH `i `d .255.0 `f ]
-"128
-[; ;oscilloscope.c: 128:     valeur=valeur*2;
-[e = _valeur * _valeur -> -> 2 `i `f ]
 "129
-[; ;oscilloscope.c: 129:     print_Vmax(valeur);
-[e ( _print_Vmax (1 _valeur ]
+[; ;oscilloscope.c: 129:     valeur=valeur*1.2;
+[e = _valeur -> * -> _valeur `d .1.2 `f ]
 "130
-[; ;oscilloscope.c: 130:     ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
+[; ;oscilloscope.c: 130:     print_Vmax(valeur);
+[e ( _print_Vmax (1 _valeur ]
 "131
-[; ;oscilloscope.c: 131:     CHS1=0;
-[e = _CHS1 -> -> 0 `i `b ]
+[; ;oscilloscope.c: 131:     ADIF = 0;
+[e = _ADIF -> -> 0 `i `b ]
 "132
-[; ;oscilloscope.c: 132:     CHS0=0;
-[e = _CHS0 -> -> 0 `i `b ]
+[; ;oscilloscope.c: 132:     CHS1=0;
+[e = _CHS1 -> -> 0 `i `b ]
 "133
-[; ;oscilloscope.c: 133:     print_Trigger(Trigger, valeur);
+[; ;oscilloscope.c: 133:     CHS0=0;
+[e = _CHS0 -> -> 0 `i `b ]
+"134
+[; ;oscilloscope.c: 134:     print_Trigger(Trigger, valeur);
 [e ( _print_Trigger (2 , _Trigger _valeur ]
-"135
-[; ;oscilloscope.c: 135:     return valeur;
+"136
+[; ;oscilloscope.c: 136:     return valeur;
 [e ) _valeur ]
 [e $UE 391  ]
-"136
-[; ;oscilloscope.c: 136: }
+"137
+[; ;oscilloscope.c: 137: }
 [e :UE 391 ]
 }
-"137
-[; ;oscilloscope.c: 137: void external_interupt(float k){
+"138
+[; ;oscilloscope.c: 138: void external_interupt(float k){
 [v _external_interupt `(v ~T0 @X0 1 ef1`f ]
 {
 [e :U _external_interupt ]
 [v _k `f ~T0 @X0 1 r1 ]
 [f ]
-"138
-[; ;oscilloscope.c: 138:     if((PORTBbits.RB6==0)&&(PORTBbits.RB7==1)){
+"139
+[; ;oscilloscope.c: 139:     if((PORTBbits.RB6==0)&&(PORTBbits.RB7==1)){
 [e $ ! && == -> . . _PORTBbits 0 6 `i -> 0 `i == -> . . _PORTBbits 0 7 `i -> 1 `i 393  ]
 {
-"139
-[; ;oscilloscope.c: 139:         Oscilo_Mode=~Oscilo_Mode;
-[e = _Oscilo_Mode -> ~ -> _Oscilo_Mode `i `a ]
 "140
-[; ;oscilloscope.c: 140:         if(Oscilo_Mode){
+[; ;oscilloscope.c: 140:         Oscilo_Mode=~Oscilo_Mode;
+[e = _Oscilo_Mode -> ~ -> _Oscilo_Mode `i `a ]
+"141
+[; ;oscilloscope.c: 141:         if(Oscilo_Mode){
 [e $ ! != -> _Oscilo_Mode `i -> 0 `i 394  ]
 {
-"141
-[; ;oscilloscope.c: 141:             glcd_text_write("S", 10, 6, 0,0);
-[e ( _glcd_text_write (4 , , , , :s 3C -> -> 10 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
 "142
-[; ;oscilloscope.c: 142:         }
+[; ;oscilloscope.c: 142:             glcd_text_write("S", 10, 6, 0,0);
+[e ( _glcd_text_write (4 , , , , :s 3C -> -> 10 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
+"143
+[; ;oscilloscope.c: 143:         }
 }
 [e $U 395  ]
-"143
-[; ;oscilloscope.c: 143:         else{
+"144
+[; ;oscilloscope.c: 144:         else{
 [e :U 394 ]
 {
-"144
-[; ;oscilloscope.c: 144:             glcd_text_write("R", 10, 6, 0,0);
-[e ( _glcd_text_write (4 , , , , :s 4C -> -> 10 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
 "145
-[; ;oscilloscope.c: 145:         }
+[; ;oscilloscope.c: 145:             glcd_text_write("R", 10, 6, 0,0);
+[e ( _glcd_text_write (4 , , , , :s 4C -> -> 10 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
+"146
+[; ;oscilloscope.c: 146:         }
 }
 [e :U 395 ]
-"147
-[; ;oscilloscope.c: 147:     }
+"148
+[; ;oscilloscope.c: 148:     }
 }
 [e $U 396  ]
-"148
-[; ;oscilloscope.c: 148:     else if ((PORTBbits.RB6==1)&&(PORTBbits.RB7==0)){
+"149
+[; ;oscilloscope.c: 149:     else if ((PORTBbits.RB6==1)&&(PORTBbits.RB7==0)){
 [e :U 393 ]
 [e $ ! && == -> . . _PORTBbits 0 6 `i -> 1 `i == -> . . _PORTBbits 0 7 `i -> 0 `i 397  ]
 {
-"150
-[; ;oscilloscope.c: 150:         if(Trigger==5){
+"151
+[; ;oscilloscope.c: 151:         if(Trigger==5){
 [e $ ! == _Trigger -> -> 5 `i `f 398  ]
 {
-"151
-[; ;oscilloscope.c: 151:             Trigger=0.5;
-[e = _Trigger -> .0.5 `f ]
 "152
-[; ;oscilloscope.c: 152:         }else{
+[; ;oscilloscope.c: 152:             Trigger=0.5;
+[e = _Trigger -> .0.5 `f ]
+"153
+[; ;oscilloscope.c: 153:         }else{
 }
 [e $U 399  ]
 [e :U 398 ]
 {
-"153
-[; ;oscilloscope.c: 153:             Trigger+=0.5;
-[e =+ _Trigger -> .0.5 `f ]
 "154
-[; ;oscilloscope.c: 154:         }
+[; ;oscilloscope.c: 154:             Trigger+=0.5;
+[e =+ _Trigger -> .0.5 `f ]
+"155
+[; ;oscilloscope.c: 155:         }
 }
 [e :U 399 ]
-"155
-[; ;oscilloscope.c: 155:         print_Trigger(Trigger, k);
+"156
+[; ;oscilloscope.c: 156:         print_Trigger(Trigger, k);
 [e ( _print_Trigger (2 , _Trigger _k ]
-"157
-[; ;oscilloscope.c: 157:     }
-}
-[e $U 400  ]
 "158
-[; ;oscilloscope.c: 158:     else if((PORTBbits.RB6==0)&&(PORTBbits.RB7==0)){
-[e :U 397 ]
-[e $ ! && == -> . . _PORTBbits 0 6 `i -> 0 `i == -> . . _PORTBbits 0 7 `i -> 0 `i 401  ]
-{
-"160
-[; ;oscilloscope.c: 160:     }
+[; ;oscilloscope.c: 158:     }
 }
-[e :U 401 ]
-[e :U 400 ]
+[e :U 397 ]
 [e :U 396 ]
-"161
-[; ;oscilloscope.c: 161:     RBIF=0;
+"159
+[; ;oscilloscope.c: 159:     RBIF=0;
 [e = _RBIF -> -> 0 `i `b ]
-"162
-[; ;oscilloscope.c: 162: }
+"160
+[; ;oscilloscope.c: 160: }
 [e :UE 392 ]
 }
-"163
-[; ;oscilloscope.c: 163: void print_Trigger(float value,float k){
+"161
+[; ;oscilloscope.c: 161: void print_Trigger(float value,float k){
 [v _print_Trigger `(v ~T0 @X0 1 ef2`f`f ]
 {
 [e :U _print_Trigger ]
 [v _value `f ~T0 @X0 1 r1 ]
 [v _k `f ~T0 @X0 1 r2 ]
 [f ]
-"164
-[; ;oscilloscope.c: 164:     float Volt;
+"162
+[; ;oscilloscope.c: 162:     float Volt;
 [v _Volt `f ~T0 @X0 1 a ]
-"165
-[; ;oscilloscope.c: 165:     int new_value;
+"163
+[; ;oscilloscope.c: 163:     int new_value;
 [v _new_value `i ~T0 @X0 1 a ]
-"166
-[; ;oscilloscope.c: 166:     Volt=(value/5.0)*255;
+"164
+[; ;oscilloscope.c: 164:     Volt=(value/5.0)*255;
 [e = _Volt -> * / -> _value `d .5.0 -> -> 255 `i `d `f ]
-"167
-[; ;oscilloscope.c: 167:     new_value=63-((Volt/5)*k);;
+"165
+[; ;oscilloscope.c: 165:     new_value=63-((Volt/5)*k);
 [e = _new_value -> - -> -> 63 `i `f * / _Volt -> -> 5 `i `f _k `i ]
-"168
-[; ;oscilloscope.c: 168:     glcd_arrow(memo_trigger,124,0,0);
+"166
+[; ;oscilloscope.c: 166:     glcd_arrow(memo_trigger,124,0,0);
 [e ( _glcd_arrow (4 , , , -> _memo_trigger `uc -> -> 124 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"169
-[; ;oscilloscope.c: 169:     memo_trigger=new_value;
+"167
+[; ;oscilloscope.c: 167:     memo_trigger=new_value;
 [e = _memo_trigger -> _new_value `f ]
-"170
-[; ;oscilloscope.c: 170:     glcd_arrow(new_value,124,0,1);
+"168
+[; ;oscilloscope.c: 168:     if(new_value<60 && new_value>13){
+[e $ ! && < _new_value -> 60 `i > _new_value -> 13 `i 401  ]
+{
+"169
+[; ;oscilloscope.c: 169:         glcd_arrow(new_value,124,0,1);}
 [e ( _glcd_arrow (4 , , , -> _new_value `uc -> -> 124 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-"171
-[; ;oscilloscope.c: 171: }
-[e :UE 402 ]
 }
-"172
-[; ;oscilloscope.c: 172: void print_oscylocope(){
+[e :U 401 ]
+"170
+[; ;oscilloscope.c: 170: }
+[e :UE 400 ]
+}
+"171
+[; ;oscilloscope.c: 171: void print_oscylocope(){
 [v _print_oscylocope `(v ~T0 @X0 1 ef ]
 {
 [e :U _print_oscylocope ]
 [f ]
-"173
-[; ;oscilloscope.c: 173:         caddrillage();
+"172
+[; ;oscilloscope.c: 172:         caddrillage();
 [e ( _caddrillage ..  ]
+"173
+[; ;oscilloscope.c: 173:         glcd_Rect(0, 13, 123, 63, 1);
+[e ( _glcd_Rect (4 , , , , -> -> 0 `i `uc -> -> 13 `i `uc -> -> 123 `i `uc -> -> 63 `i `uc -> -> 1 `i `E3577 ]
 "174
-[; ;oscilloscope.c: 174:         glcd_Rect(0, 13, 123, 63, 1);
-[e ( _glcd_Rect (4 , , , , -> -> 0 `i `uc -> -> 13 `i `uc -> -> 123 `i `uc -> -> 63 `i `uc -> -> 1 `i `E3576 ]
+[; ;oscilloscope.c: 174:         glcd_text_write("M:R", 10, 0, 0,0);
+[e ( _glcd_text_write (4 , , , , :s 5C -> -> 10 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
 "175
-[; ;oscilloscope.c: 175:         glcd_text_write("M:R", 10, 0, 0,0);
-[e ( _glcd_text_write (4 , , , , :s 5C -> -> 10 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
+[; ;oscilloscope.c: 175:         glcd_text_write("A:5", 10, 12, 0,0);
+[e ( _glcd_text_write (4 , , , , :s 6C -> -> 10 `i `uc -> -> 12 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
 "176
-[; ;oscilloscope.c: 176:         glcd_text_write("A:5", 10, 12, 0,0);
-[e ( _glcd_text_write (4 , , , , :s 6C -> -> 10 `i `uc -> -> 12 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
-"177
-[; ;oscilloscope.c: 177: }
-[e :UE 403 ]
+[; ;oscilloscope.c: 176: }
+[e :UE 402 ]
 }
-"178
-[; ;oscilloscope.c: 178: void print_Vmax(float A){
+"177
+[; ;oscilloscope.c: 177: void print_Vmax(float A){
 [v _print_Vmax `(v ~T0 @X0 1 ef1`f ]
 {
 [e :U _print_Vmax ]
 [v _A `f ~T0 @X0 1 r1 ]
 [f ]
-"179
-[; ;oscilloscope.c: 179:     char affichage[10];
+"178
+[; ;oscilloscope.c: 178:     char affichage[10];
 [v _affichage `uc ~T0 @X0 -> 10 `i a ]
+"179
+[; ;oscilloscope.c: 179:     A=2.5/A;
+[e = _A -> / .2.5 -> _A `d `f ]
 "180
-[; ;oscilloscope.c: 180:     A=5*A;
-[e = _A * -> -> 5 `i `f _A ]
-"181
-[; ;oscilloscope.c: 181:     sprintf(&affichage,"A:%.1fV",A);
+[; ;oscilloscope.c: 180:     sprintf(&affichage,"A:%.1fV",A);
 [e ( _sprintf (1 , (. , -> &U _affichage `*uc :s 7C -> _A `d ]
+"181
+[; ;oscilloscope.c: 181:     glcd_text_write(affichage, 10, 12, 0,0);
+[e ( _glcd_text_write (4 , , , , -> &U _affichage `*Cuc -> -> 10 `i `uc -> -> 12 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
 "182
-[; ;oscilloscope.c: 182:     glcd_text_write(affichage, 10, 12, 0,0);
-[e ( _glcd_text_write (4 , , , , -> &U _affichage `*Cuc -> -> 10 `i `uc -> -> 12 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
-"183
-[; ;oscilloscope.c: 183: }
-[e :UE 404 ]
+[; ;oscilloscope.c: 182: }
+[e :UE 403 ]
 }
-"184
-[; ;oscilloscope.c: 184: void print_Techantillonage(int time){
+"183
+[; ;oscilloscope.c: 183: void print_Techantillonage(int time){
 [v _print_Techantillonage `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _print_Techantillonage ]
 [v _time `i ~T0 @X0 1 r1 ]
 [f ]
-"185
-[; ;oscilloscope.c: 185:     char affichage[10];
+"184
+[; ;oscilloscope.c: 184:     char affichage[10];
 [v _affichage `uc ~T0 @X0 -> 10 `i a ]
-"186
-[; ;oscilloscope.c: 186:     float A=0.5*(float)time+1.0;
+"185
+[; ;oscilloscope.c: 185:     float A=0.5*(float)time+1.0;
 [v _A `f ~T0 @X0 1 a ]
 [e = _A -> + * .0.5 -> -> _time `f `d .1.0 `f ]
-"187
-[; ;oscilloscope.c: 187:     sprintf(&affichage," T:%.1f ",A);
+"186
+[; ;oscilloscope.c: 186:     sprintf(&affichage," T:%.0f ",A);
 [e ( _sprintf (1 , (. , -> &U _affichage `*uc :s 8C -> _A `d ]
+"187
+[; ;oscilloscope.c: 187:     glcd_text_write(affichage, 10, 30, 0,0);
+[e ( _glcd_text_write (4 , , , , -> &U _affichage `*Cuc -> -> 10 `i `uc -> -> 30 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3573 ]
 "188
-[; ;oscilloscope.c: 188:     glcd_text_write(affichage, 10, 30, 0,0);
-[e ( _glcd_text_write (4 , , , , -> &U _affichage `*Cuc -> -> 10 `i `uc -> -> 30 `i `uc -> -> 0 `i `uc -> -> 0 `i `E3572 ]
+[; ;oscilloscope.c: 188: }
+[e :UE 404 ]
+}
 "189
-[; ;oscilloscope.c: 189: }
+[; ;oscilloscope.c: 189: void loop_oscilloscope(){
+[v _loop_oscilloscope `(v ~T0 @X0 1 ef ]
+{
+[e :U _loop_oscilloscope ]
+[f ]
+"190
+[; ;oscilloscope.c: 190:     glcd_Init(GLCD_ON);
+[e ( _glcd_Init (1 . `E3565 1 ]
+"191
+[; ;oscilloscope.c: 191:     glcd_Image();
+[e ( _glcd_Image ..  ]
+"192
+[; ;oscilloscope.c: 192:     _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"193
+[; ;oscilloscope.c: 193:     glcd_FillScreen(0);
+[e ( _glcd_FillScreen (1 -> -> 0 `i `E3577 ]
+"194
+[; ;oscilloscope.c: 194:     print_oscylocope();
+[e ( _print_oscylocope ..  ]
+"195
+[; ;oscilloscope.c: 195:     init_ADC();
+[e ( _init_ADC ..  ]
+"196
+[; ;oscilloscope.c: 196:     InitTimer0(0x03, 0xE8);
+[e ( _InitTimer0 (2 , -> -> 3 `i `uc -> -> 232 `i `uc ]
+"197
+[; ;oscilloscope.c: 197:     init_external_interupt();
+[e ( _init_external_interupt ..  ]
+"198
+[; ;oscilloscope.c: 198: }
 [e :UE 405 ]
 }
 [p f _sprintf 8462464 ]
@@ -1360,5 +1413,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 5C 77 58 82 0 ]
 [a 4C 82 0 ]
 [a 6C 65 58 53 0 ]
-[a 8C 32 84 58 37 46 49 102 32 0 ]
+[a 8C 32 84 58 37 46 48 102 32 0 ]
 [a 2C 32 32 32 32 32 32 32 32 32 32 0 ]

@@ -17,6 +17,7 @@ void init_external_interupt(){
    INTEDG0=0;
 }
 void init_ADC() {
+    TRISA=255;
     TRISD = 0x00; // PORTD is an output
     PORTD = 0x00;
      TRISC = 0x00; // PORTD is an output
@@ -56,7 +57,7 @@ void T0_Interupt( int val){
 }
 void ADC_Interupt(float k){
     int ADC_Value=ADRESH;
-    int print_ADC=64-((ADC_Value/5)*k);
+    int print_ADC=63-((ADC_Value/5)*k);
     
     if (Oscilo_Mode){
         if(Start_Single){
@@ -155,19 +156,17 @@ void external_interupt(float k){
         print_Trigger(Trigger, k);
         
     }
-    else if((PORTBbits.RB6==0)&&(PORTBbits.RB7==0)){
-        
-    }
     RBIF=0;
 }
 void print_Trigger(float value,float k){
     float Volt;
     int new_value;
     Volt=(value/5.0)*255;
-    new_value=63-((Volt/5)*k);;
+    new_value=63-((Volt/5)*k);
     glcd_arrow(memo_trigger,124,0,0); 
     memo_trigger=new_value;
-    glcd_arrow(new_value,124,0,1); 
+    if(new_value<60 && new_value>13){
+        glcd_arrow(new_value,124,0,1);} 
 }
 void print_oscylocope(){
         caddrillage();
@@ -177,13 +176,23 @@ void print_oscylocope(){
 }
 void print_Vmax(float A){
     char affichage[10];
-    A=5*A;
+    A=2.5/A;
     sprintf(&affichage,"A:%.1fV",A);
     glcd_text_write(affichage, 10, 12, 0,0);
 }
 void print_Techantillonage(int time){
     char affichage[10];
     float A=0.5*(float)time+1.0;
-    sprintf(&affichage," T:%.1f ",A);
+    sprintf(&affichage," T:%.0f ",A);
     glcd_text_write(affichage, 10, 30, 0,0);
+}
+void loop_oscilloscope(){
+    glcd_Init(GLCD_ON);
+    glcd_Image();
+    __delay_ms(1000);
+    glcd_FillScreen(0);
+    print_oscylocope();
+    init_ADC();
+    InitTimer0(0x03, 0xE8);
+    init_external_interupt();
 }

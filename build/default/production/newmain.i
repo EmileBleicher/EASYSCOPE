@@ -5649,7 +5649,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 7 "newmain.c" 2
 
 # 1 "./main.h" 1
-# 12 "./main.h"
+# 10 "./main.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5802,7 +5802,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 12 "./main.h" 2
+# 10 "./main.h" 2
 
 
 # 1 "./glcd.h" 1
@@ -5997,7 +5997,7 @@ void glcd_Image();
 void caddrillage();
 void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color);
 void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color);
-# 14 "./main.h" 2
+# 12 "./main.h" 2
 
 # 1 "./oscilloscope.h" 1
 # 11 "./oscilloscope.h"
@@ -6017,41 +6017,166 @@ void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char col
     void print_Trigger(float value,float k);
     void print_Vmax(float A);
     void print_Techantillonage(int time);
+    void loop_oscilloscope();
+# 13 "./main.h" 2
+
+# 1 "./multimetre.h" 1
+# 10 "./multimetre.h"
+    void loop_multi();
+    void displayVoltage(unsigned int adcValue);
+    void multi_init();
+# 14 "./main.h" 2
+
+# 1 "./multi.h" 1
+
+
+
+
+
+
+
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Clear();
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Init();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right();
+void Lcd_Shift_Left();
+void Lcd_start();
+void displayVoltage(unsigned int adcValue);
 # 15 "./main.h" 2
 # 8 "newmain.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
+# 9 "newmain.c" 2
 
 #pragma config PWRT = OFF
 #pragma config BOR = OFF
 #pragma config LVP = OFF
 #pragma config DEBUG = OFF
 
+const unsigned char digitDisplay[] = {
+    0b00111111,
+    0b00000110,
+    0b01011011,
+    0b01001111,
+    0b01100110,
+    0b01101101,
+    0b01111101,
+    0b00000111,
+    0b01111111,
+    0b01101111
+};
+
+void displayVoltage(unsigned int adcValue) {
+
+unsigned int voltage_mV = (unsigned int) ((double) adcValue * 5000 / 255);
+unsigned char digits[4];
+digits[3] = voltage_mV / 1000;
+digits[2] = (voltage_mV / 100) % 10;
+digits[1] = (voltage_mV / 10) % 10;
+digits[0] = voltage_mV % 10;
+
+for (int i = 0; i < 4; i++) {
+PORTD = digitDisplay[digits[i]];
+if(i == 3){
+PORTDbits.RD7 = 1;
+}
+PORTA = (1 << i);
+_delay((unsigned long)((5)*(8000000/4000.0)));
+PORTA = 0;
+}
+}
 int val=18;
 float Amp=1;
-
-void __attribute__((picinterrupt(("")))) ISR() {
-    if (PIR1bits.ADIF && CHS0==0 && CHS1==0) {
-        ADC_Interupt(Amp);}
-    if (PIR1bits.ADIF && CHS0==1 && CHS1==0) {
-        Frequence_Echantillonage(&val);}
-    if (PIR1bits.ADIF && CHS0==0 && CHS1==1){
-       Amp=Amplitude_Echantillonage();}
-    if(INTCONbits.TMR0IF){
-  T0_Interupt(val); }
-    if(RBIF==1){
-        external_interupt(Amp);}
+char valH;
+_Bool mode=0;
+void toggle_mode(){
+   mode= (mode==0)?1:0;
 }
+void __attribute__((picinterrupt(("")))) ISR() {
+    char static affichage[30];
+    static char valL;
+    static float Te;
+        if (PIR1bits.ADIF && CHS0==0 && CHS1==0) {
+            if(mode==0){
+            ADC_Interupt(Amp);}
+            else if (mode==1){
+                displayVoltage(ADRESH);
+                CHS2=1;
+                CHS1=0;
+                CHS0=1;
+                GO_DONE=1;
+                valL=ADRESL;
+                valH=ADRESH;
+
+
+                Lcd_Clear();
+                Lcd_Set_Cursor(1,1);
+                sprintf(affichage,"H:%d",valH);
+                Lcd_Write_String(affichage);
+                Lcd_Set_Cursor(1,10);
+                sprintf(affichage,"L:%d",valL);
+                Lcd_Write_String(affichage);
+                Lcd_Set_Cursor(2,1);
+                Te=(val/2)+1;
+                sprintf(affichage,"TE:%.1f",Te);
+                Lcd_Write_String(affichage);
+                PIR1bits.ADIF=0;
+            }
+        }
+        if (PIR1bits.ADIF && CHS0==1 && CHS1==0) {
+            Frequence_Echantillonage(&val);}
+        if (PIR1bits.ADIF && CHS0==0 && CHS1==1){
+          Amp= Amplitude_Echantillonage();}
+        if(INTCONbits.TMR0IF){
+            T0_Interupt(val);}
+        if(RBIF==1){
+            if((PORTBbits.RB6==0)&&(PORTBbits.RB7==0)){
+                toggle_mode();
+                glcd_FillScreen(0);
+                glcd_text_write("Changement mode", 20,1, 1,1);
+                _delay((unsigned long)((1000)*(8000000/4000.0)));
+                glcd_FillScreen(0);
+                if(mode==0){
+                    TRISA=255;
+                    CHS2=0;
+                    CHS1=0;
+                    CHS0=0;
+                    glcd_FillScreen(0);
+                    print_oscylocope();
+                }
+                else if(mode==1){
+                    TRISA=240;
+                    CHS2=1;
+                    CHS1=0;
+                    CHS0=1;
+                    Lcd_Init();
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1,1);
+                    Lcd_Write_String("LANCEMENT DE L ECRAN LCD");
+                }
+            }
+            else {
+                external_interupt(Amp);
+            }
+        }
+        }
+
+
 
 void main(void)
 {
-    glcd_Init(GLCD_ON);
-    glcd_Image();
-    _delay((unsigned long)((1000)*(8000000/4000.0)));
-    glcd_FillScreen(0);
-    print_oscylocope();
-    init_ADC();
-    InitTimer0(0x03, 0xE8);
-    init_external_interupt();
+# 137 "newmain.c"
+    loop_oscilloscope();
     while(1){
+    while(mode==0){
     }
+    while (mode==1){
+        GO_DONE=1;
+         displayVoltage(valH);
+    } }
     return;
 }

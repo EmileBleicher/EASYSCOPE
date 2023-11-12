@@ -7,12 +7,11 @@
 
 #ifndef MAIN_H
 #define	MAIN_H
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "glcd.h"
 #include "oscilloscope.h"
-
+#include "multimetre.h"
+#include "multi.h"
 #endif	/* MAIN_H */
 

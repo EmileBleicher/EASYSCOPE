@@ -25,6 +25,7 @@
     void print_Trigger(float value,float k);
     void print_Vmax(float A);
     void print_Techantillonage(int time);
+    void loop_oscilloscope();
 # 1 "oscilloscope.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
@@ -5666,7 +5667,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 3 "oscilloscope.c" 2
 
 # 1 "./main.h" 1
-# 12 "./main.h"
+# 10 "./main.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5819,7 +5820,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 12 "./main.h" 2
+# 10 "./main.h" 2
 
 
 # 1 "./glcd.h" 1
@@ -6014,7 +6015,36 @@ void glcd_Image();
 void caddrillage();
 void glcd_arrow(unsigned char posx, unsigned char posy,unsigned char xory,unsigned char color);
 void glcd_WriteString_2(unsigned char str[],unsigned char font,unsigned char color);
+# 12 "./main.h" 2
+
+
+# 1 "./multimetre.h" 1
+# 10 "./multimetre.h"
+    void loop_multi();
+    void displayVoltage(unsigned int adcValue);
+    void multi_init();
 # 14 "./main.h" 2
+
+# 1 "./multi.h" 1
+
+
+
+
+
+
+
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Clear();
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Init();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right();
+void Lcd_Shift_Left();
+void Lcd_start();
+void displayVoltage(unsigned int adcValue);
+# 15 "./main.h" 2
 # 4 "oscilloscope.c" 2
 
 
@@ -6032,6 +6062,7 @@ void init_external_interupt(){
    INTEDG0=0;
 }
 void init_ADC() {
+    TRISA=255;
     TRISD = 0x00;
     PORTD = 0x00;
      TRISC = 0x00;
@@ -6071,7 +6102,7 @@ void T0_Interupt( int val){
 }
 void ADC_Interupt(float k){
     int ADC_Value=ADRESH;
-    int print_ADC=64-((ADC_Value/5)*k);
+    int print_ADC=63-((ADC_Value/5)*k);
 
     if (Oscilo_Mode){
         if(Start_Single){
@@ -6140,7 +6171,7 @@ void Frequence_Echantillonage(int *valeur){
 }
 float Amplitude_Echantillonage(){
     float valeur=ADRESH/255.0;
-    valeur=valeur*2;
+    valeur=valeur*1.2;
     print_Vmax(valeur);
     ADIF = 0;
     CHS1=0;
@@ -6170,19 +6201,17 @@ void external_interupt(float k){
         print_Trigger(Trigger, k);
 
     }
-    else if((PORTBbits.RB6==0)&&(PORTBbits.RB7==0)){
-
-    }
     RBIF=0;
 }
 void print_Trigger(float value,float k){
     float Volt;
     int new_value;
     Volt=(value/5.0)*255;
-    new_value=63-((Volt/5)*k);;
+    new_value=63-((Volt/5)*k);
     glcd_arrow(memo_trigger,124,0,0);
     memo_trigger=new_value;
-    glcd_arrow(new_value,124,0,1);
+    if(new_value<60 && new_value>13){
+        glcd_arrow(new_value,124,0,1);}
 }
 void print_oscylocope(){
         caddrillage();
@@ -6192,13 +6221,23 @@ void print_oscylocope(){
 }
 void print_Vmax(float A){
     char affichage[10];
-    A=5*A;
+    A=2.5/A;
     sprintf(&affichage,"A:%.1fV",A);
     glcd_text_write(affichage, 10, 12, 0,0);
 }
 void print_Techantillonage(int time){
     char affichage[10];
     float A=0.5*(float)time+1.0;
-    sprintf(&affichage," T:%.1f ",A);
+    sprintf(&affichage," T:%.0f ",A);
     glcd_text_write(affichage, 10, 30, 0,0);
+}
+void loop_oscilloscope(){
+    glcd_Init(GLCD_ON);
+    glcd_Image();
+    _delay((unsigned long)((1000)*(8000000/4000.0)));
+    glcd_FillScreen(0);
+    print_oscylocope();
+    init_ADC();
+    InitTimer0(0x03, 0xE8);
+    init_external_interupt();
 }

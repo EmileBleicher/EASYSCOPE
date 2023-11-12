@@ -1632,10 +1632,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-[v F3638 `Cuc ~T0 @X0 -> 3 `i t ]
+[v F3661 `Cuc ~T0 @X0 -> 3 `i t ]
 "94
 [; ;glcd.c: 94: static const uint8_t Font3x6[65][3] = {
-[v _Font3x6 `F3638 ~T0 @X0 -> 65 `i s ]
+[v _Font3x6 `F3661 ~T0 @X0 -> 65 `i s ]
 [i _Font3x6
 :U ..
 :U ..

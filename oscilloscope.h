@@ -24,5 +24,6 @@
     void print_Trigger(float value,float k);
     void print_Vmax(float A);
     void print_Techantillonage(int time);
+    void loop_oscilloscope();
 #endif	/* OSCILLOSCOPE_H */
 
